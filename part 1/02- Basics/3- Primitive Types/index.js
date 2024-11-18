@@ -6,5 +6,5 @@
 let name = "Reacher"; // String literal
 let age = 30; // Number literal
 let isApproved = true; // Boolean literal
-let firstName = undefined; // Undefined
-let selectedColor = null; // Null
+let firstName = undefined; //undefined
+let selectedColor = null; // null
