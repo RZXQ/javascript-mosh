@@ -1,6 +1,6 @@
 checkSpeed(130);
 
-function checkSpeed(speed) {
+function checkSpeed(speed: number) {
   const speedLimit = 70;
   const kmPerPoint = 5;
 
