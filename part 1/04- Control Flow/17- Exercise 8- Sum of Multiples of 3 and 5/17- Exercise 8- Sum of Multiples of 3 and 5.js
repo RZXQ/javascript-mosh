@@ -8,5 +8,6 @@ function sum(limit) {
       sum += i;
     }
   }
+
   return sum;
 }
