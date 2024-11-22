@@ -6,5 +6,5 @@
 let name = "Reacher"; // String literal
 let age = 30; // Number literal
 let isApproved = true; // Boolean literal
-let firstName = undefined; //undefined
-let selectedColor = null; // null
+let firstName; // undefined - variable declared but not assigned a value
+let selectedColor = null; // null - explicitly set to indicate no value (intentional absence)
