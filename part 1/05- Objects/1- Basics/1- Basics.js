@@ -1,13 +1,14 @@
-// Object-oriented Programming (OOP)
-
-// if a function is part of an object, then the function is called method
+// The circle object groups related properties and methods together.
 const circle = {
   radius: 1,
-  location: { x: 1, y: 1 },
+  location: {
+    x: 1,
+    y: 1,
+  },
   isVisible: true,
-  draw() {
+  draw: function () {
     console.log("draw");
   },
 };
 
-circle.draw();
+circle.draw(); // A method is a function associated with an object.
