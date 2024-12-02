@@ -1,7 +1,7 @@
-// camel Notation: oneTwoThreeFour
-// Pascal Notation: OneTwoThreeFour
+// camelCase: oneTwoThreeFour
+// PascalCase: OneTwoThreeFour
 
-// Constructor Function
+// Using a constructor function to create an object:
 function Circle(radius) {
   this.radius = radius;
   this.draw = function () {
