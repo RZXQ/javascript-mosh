@@ -1,15 +1,16 @@
-// Using a factory function to create an object.
-// It centralizes the logic for object creation.
+// 1. Using a factory function to create an object
+//    - A factory function centralizes the logic for creating similar objects,
+//      avoiding repetition and improving maintainability.
 function createCircle(radius) {
   return {
-    radius, // Shorthand property name when key and value are the same.
+    radius, // 1.1 Property: The radius of the circle (shorthand syntax for radius: radius)
 
-    // A. Declaring a method using shorthand syntax
+    // 1.2 Method: Declared using shorthand syntax (equivalent to draw: function() {...})
     draw() {
       console.log("draw");
     },
 
-    // B. Traditional function declaration syntax
+    // 1.3 Alternative method declaration (commented out for comparison)
     // draw: function () {
     //   console.log("draw");
     // }
