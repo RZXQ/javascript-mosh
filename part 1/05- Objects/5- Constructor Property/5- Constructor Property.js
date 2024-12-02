@@ -1,16 +1,5 @@
-// every object has a constructor property
-
-// Factory Function
-function createCircle(radius) {
-  return {
-    radius,
-    draw() {
-      console.log("draw");
-    },
-  };
-}
-
-// Constructor Function
+// 1. Every object in JavaScript has a property called 'constructor'.
+//    - The 'constructor' property references the function that was used to create the object.
 function Circle(radius) {
   this.radius = radius;
   this.draw = function () {
@@ -18,5 +7,8 @@ function Circle(radius) {
   };
 }
 
-console.log(createCircle(1).constructor);
-console.log(new Circle(1).constructor);
+const circle = new Circle(1);
+console.log(circle.constructor); // Output: [Function: Circle]
+
+let x = {};
+console.log(x.constructor); // Output: [Function: Object]
