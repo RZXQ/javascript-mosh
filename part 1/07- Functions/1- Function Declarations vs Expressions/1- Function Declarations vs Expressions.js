@@ -1,16 +1,14 @@
-// Function Explanation
-// 1. `walk`: Declared using a function declaration, available globally due to hoisting.
-// 2. `run1`: Named function expression, its name (`walk`) is local to the function scope.
-// 3. `run2`: Anonymous function expression, referenced by the constant `run2`.
-
+// 1. Function Declaration
 function walk() {
   console.log("walk");
 }
 
+// 2. Named Function Expression
 const run1 = function walk() {
   console.log("run1");
 };
 
+// 3. Anonymous Function Expression
 const run2 = function () {
   console.log("run2");
 };
