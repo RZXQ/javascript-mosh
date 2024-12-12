@@ -20,6 +20,12 @@ As long as the circle object exists in memory, the draw method (and the closure 
 will also exist in memory. Even if you never call circle.draw(), the closure is still there
 because the circle object references the draw method, and draw references the closure.
 
+**In a closure, the nested inner function does not keep public properties (defined on this)
+as part of the closure context.** Public properties are directly attached to the object
+instance (e.g., this.publicProp), so they do not belong to the local scope of the outer
+function. Closures only capture variables from the **lexical scope** (the local scope)
+of the outer function.
+
 In simpler terms:
 - You can’t directly get `defaultLocation` from `circle` because it’s private.
 - But `draw` can still access `defaultLocation` due to the closure.
@@ -33,7 +39,6 @@ Circle scope:
    ├── computeOptimumLocation (private)
    └── this.draw() (public, captures these private variables via closure)
 */
-
 function Circle(radius) {
   let color = "red";
   let defaultLocation = { x: 0, y: 0 };
@@ -41,7 +46,7 @@ function Circle(radius) {
     // Logic for computation
   };
 
-  this.radius = radius;
+  this.radius = radius; // Public property
 
   this.draw = function () {
     console.log("draw");
