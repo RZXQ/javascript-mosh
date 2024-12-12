@@ -51,6 +51,7 @@ function Circle(radius) {
   this.draw = function () {
     console.log("draw");
     console.log(defaultLocation); // Accesses private variable due to closure
+    console.log(this.radius); // this.radius is not part of the closure context, even if you access it inside the draw method.
   };
 }
 
