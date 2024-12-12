@@ -54,11 +54,17 @@ In simpler terms:
   scope even after `Circle` has finished executing.
 
 Diagram:
-Circle scope:
-   ├── color (private)
-   ├── defaultLocation (private)
-   ├── computeOptimumLocation (private)
-   └── this.draw() (public, captures these private variables via closure)
+Global Scope:
+  ├── Circle (constructor function)
+  ├── circle (instance of Circle)
+       ├── radius (public property, stored on the object itself)
+       ├── draw (public method, has access to closure)
+
+Circle Function Scope (captured by closure, referenced by draw):
+  ├── color (private variable, captured by closure)
+  ├── defaultLocation (private variable, captured by closure)
+  ├── computeOptimumLocation (private variable, captured by closure)
+
 */
 function Circle(radius) {
   let color = "red";
