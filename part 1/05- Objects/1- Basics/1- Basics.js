@@ -1,7 +1,14 @@
-// 1. The circle object groups related properties and methods together.
-//    - This allows for better organization and encapsulation of related data and functionality.
+// 1. Defines a `circle` object using object literal syntax.
+//    - Groups related properties and methods to encapsulate data and functionality.
+//    - Improves code organization and readability.
+// 2. Properties:
+//    - `radius`: Stores the radius of the circle (numeric value).
+//    - `location`: An object that represents the x and y coordinates of the circle.
+//    - `isVisible`: A boolean indicating whether the circle is visible.
+// 3. Method:
+//    - `draw`: A function that prints "draw" to the console.
+//      - Demonstrates a behavior of the `circle` object.
 
-// 2. Using object literal syntax to define the 'circle' object:
 const circle = {
   radius: 1,
   location: {
