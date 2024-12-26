@@ -3,17 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"
       name="viewport"
     />
     <meta content="ie=edge" http-equiv="X-UA-Compatible" />
     <title>Document</title>
   </head>
   <body>
-    <!-- 1. Browser loads HTML content from top to bottom: - If the script is at the top, the browser might pause rendering the HTML to execute the JavaScript. -->
+    <!-- Explanation:
+     1. The browser loads HTML content sequentially from top to bottom.
+        If the JavaScript script is placed at the top, it might interrupt the rendering process
+        of the rest of the HTML. For example, scripts that access or interact with other elements
+        would fail if those elements haven’t been rendered yet.
+     2. To ensure all HTML elements are correctly rendered before scripts are executed,
+        it is best practice to place JavaScript code at the bottom of the <body>. -->
 
-    <!-- 2. Faster Content Loading: - By placing the script at the bottom, the content of the page loads first before any JavaScript is executed. This guarantees that the user sees the content without delays. -->
-    <!--  as best practice, we should be script here-->
     <script>
       // This is my first JavaScript code!
       console.log("Hello World");
