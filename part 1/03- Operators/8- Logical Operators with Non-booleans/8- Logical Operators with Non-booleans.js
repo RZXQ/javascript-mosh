@@ -1,22 +1,15 @@
-// 1. The result of a logical operation is not necessarily a boolean true or false.
-///    It depends on the operands involved.
-///
-/// Falsy (not a boolean false) values in JavaScript:
-/// - undefined
-/// - null
-/// - 0
-/// - false
-/// - '' (empty string)
-/// - NaN
-///
-/// Anything that is not falsy is considered truthy.
+// Logical OR (||): Returns the first truthy value or the last falsy value.
+console.log(false || "Reacher"); // "Reacher"
+console.log(false || 1); // 1
+console.log(false || 1 || 2); // 1
 
-console.log(false || "Reacher"); /// "Reacher" (truthy value is returned)
-console.log(false || 1); /// 1 (truthy value is returned)
-console.log(false || 1 || 2); /// 1 (short-circuiting: returns first truthy value, 1)
+// Logical AND (&&): Returns the first falsy value or the last truthy value.
+console.log(true && "Reacher"); // "Reacher"
+console.log(false && "Reacher"); // false
+console.log("Hello" && 42); // 42
+console.log(0 && "Reacher"); // 0
+console.log(null && "Anything"); // null
 
-/// 2. Real-World Example: Assigning Default Values
-let userColor = undefined; /// User has not selected a color
-let defaultColor = "blue"; /// Default color to use
-let currentColor = userColor || defaultColor; /// Chooses defaultColor if userColor is falsy
-console.log(currentColor); /// Output: "blue"
+// Example: Assigning Default Values
+let currentColor = undefined || "blue"; // Use default if the first is falsy
+console.log(currentColor); // "blue"
