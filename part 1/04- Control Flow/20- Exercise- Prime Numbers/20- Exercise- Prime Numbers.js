@@ -1,18 +1,19 @@
-showPrimes(20);
+function isPrimeNumber(number) {
+  let isPrime = true;
+  for (let divisor = 2; divisor < number; divisor++) {
+    if (number % divisor === 0) {
+      isPrime = false;
+    }
+  }
+  return isPrime;
+}
 
 function showPrimes(limit) {
   for (let number = 2; number <= limit; number++) {
-    if (isPrime(number)) {
+    if (isPrimeNumber(number)) {
       console.log(number);
     }
   }
-
-  function isPrime(number) {
-    for (let factor = 2; factor < number; factor++) {
-      if (number % factor === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
 }
+
+showPrimes(100);
