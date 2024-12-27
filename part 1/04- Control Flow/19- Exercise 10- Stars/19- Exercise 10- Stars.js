@@ -1,11 +1,12 @@
-showStars(5);
-
-function showStars(row) {
-  for (let i = 1; i <= row; i++) {
-    let pattern = "";
-    for (let j = 1; j <= i; j++) {
+function generatePattern(rowCount) {
+  let pattern = "";
+  for (let row = 1; row <= rowCount; row++) {
+    for (let col = 1; col <= row; col++) {
       pattern += "*";
     }
-    console.log(pattern);
+    pattern += "\n";
   }
+  return pattern;
 }
+
+console.log(generatePattern(5));
