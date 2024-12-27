@@ -1,31 +1,29 @@
-// Two Types of Programming Languages Based on Typing:
-// 1. **Static (Statically-Typed)**: The variable type is fixed when declared and cannot change.
-//    Example: `String name = "John";`
-// 2. **Dynamic (Dynamically-Typed)**: The variable type is determined at runtime and can change as the program runs.
-//    Example in JavaScript: `let name = "John";`
+// Typing in Programming:
+// 1. Static: Variable types are fixed (e.g., `String name = "John";`).
+// 2. Dynamic: Variable types are determined at runtime (e.g., `let name = "John";`).
 
-// In JavaScript, we can check the type of a variable using the `typeof` operator.
-let name = "Reacher";
-console.log(typeof name); // Output: "string" - currently, name is a string
+// Dynamic Typing in JavaScript
+let name = "Reacher"; // Initially a string
+console.log(typeof name); // Output: "string"
 
-name = 1; // Assigning a number to the same variable
-console.log(typeof name); // Output: "number" - type of name has changed to number
+name = 1; // Now a number
+console.log(typeof name); // Output: "number"
 
-// JavaScript Number Type
+// Number Type
 let age = 30;
 console.log(typeof age); // Output: "number"
 
-age = 30.1;
-console.log(typeof age); // Output: "number" - JavaScript does not differentiate between integers and floating-point numbers; both are of type "number"
+age = 30.1; // Still a "number" (no distinction between integers & floats)
+console.log(typeof age); // Output: "number"
 
 // Boolean Type
 let isApproved = true;
-console.log(typeof isApproved); // Output: "boolean" - a boolean value
+console.log(typeof isApproved); // Output: "boolean"
 
 // Undefined Type
-let firstName = undefined;
-console.log(typeof firstName); // Output: "undefined" - both the value and type are undefined
+let firstName;
+console.log(typeof firstName); // Output: "undefined"
 
 // Null Type
 let selectedColor = null;
-console.log(typeof selectedColor); // Output: "object" - null represents an empty value but is considered an "object" due to a quirk in JavaScript
+console.log(typeof selectedColor); // Output: "object" (a known JavaScript quirk)
