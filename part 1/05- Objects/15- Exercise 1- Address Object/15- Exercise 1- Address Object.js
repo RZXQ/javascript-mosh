@@ -1,3 +1,5 @@
+// Properties: street, city, zipCode
+// Function: showAddress(address) logs all key-value pairs of the address
 let address = {
   street: "a",
   city: "b",
