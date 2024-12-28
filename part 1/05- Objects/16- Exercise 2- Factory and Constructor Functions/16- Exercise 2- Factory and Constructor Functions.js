@@ -1,3 +1,6 @@
+// createAddress: Factory function (street, city, zipCode).
+// Address: Constructor function (street, city, zipCode).
+
 function createAddress(street, city, zipCode) {
   return {
     street,
