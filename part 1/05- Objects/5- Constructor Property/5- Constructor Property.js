@@ -15,10 +15,10 @@ function createCircle(radius) {
 }
 
 const circle1 = new Circle(1);
-console.log(circle1.constructor); // Output: [Function: Circle] (Circle was created using a constructor function)
+console.log(circle1.constructor); // Output: [Function: Circle]
 
 let x = {};
-console.log(x.constructor); // Output: [Function: Object] (x was created using the Object constructor by default)
+console.log(x.constructor); // Output: [Function: Object]
 
 const circle2 = createCircle(1);
-console.log(circle2.constructor); // Output: [Function: Object] (circle2 is created using a factory function, which creates plain objects)
+console.log(circle2.constructor); // Output: [Function: Object]
