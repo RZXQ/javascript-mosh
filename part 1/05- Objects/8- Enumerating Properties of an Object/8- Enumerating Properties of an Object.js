@@ -1,8 +1,4 @@
-/// 1. This example demonstrates ways to iterate over an object's properties and values.
-///    - `for...in`: Iterates over all enumerable properties of an object.
-///    - `Object.keys`: Returns an array of the object's keys.
-///    - `Object.entries`: Returns an array of key-value pairs as subarrays.
-///    - `in`: Checks if a property exists in an object.
+// ==================== Object Definition ====================
 
 const circle = {
   radius: 1,
@@ -11,24 +7,32 @@ const circle = {
   },
 };
 
-// 1. Using `for...in` to iterate over keys and values
+// ==================== for...in Loop ====================
+
 for (let key in circle) {
-  console.log(key, circle[key]); // Logs each key and its corresponding value
+  console.log(key, circle[key]);
 }
 
-// 2. Using `for...of` with `Object.keys`
-//    - `Object.keys(circle)` returns an array of keys
+// ==================== for...of with Object.keys ====================
+
 for (let key of Object.keys(circle)) {
-  console.log(key); // Logs each key
+  console.log(key);
 }
 
-// 3. Using `for...of` with `Object.entries`
-//    - `Object.entries(circle)` returns an array of key-value pairs
+// ==================== for...of with Object.values ====================
+
+for (let value of Object.values(circle)) {
+  console.log(value);
+}
+
+// ==================== for...of with Object.entries ====================
+
 for (let entry of Object.entries(circle)) {
-  console.log(entry); // Logs each key-value pair as an array [key, value]
+  console.log(entry);
 }
 
-// 4. Using the `in` operator to check if a property exists in the object
+// ==================== Property Existence Check ====================
+
 if ("radius" in circle) {
-  console.log("yes"); // Logs "yes" if the 'radius' property exists in the circle object
+  console.log("yes");
 }
