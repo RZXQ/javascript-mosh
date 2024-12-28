@@ -1,7 +1,3 @@
-// camelCase: oneTwoThreeFour
-// PascalCase: OneTwoThreeFour
-
-// Using a constructor function to create an object:
 function Circle(radius) {
   this.radius = radius;
   this.draw = function () {
