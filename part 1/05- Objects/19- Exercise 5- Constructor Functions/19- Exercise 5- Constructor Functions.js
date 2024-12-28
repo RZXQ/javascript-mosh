@@ -1,3 +1,4 @@
+// Constructor: Post(title, body, author) with defaults for views, comments, isLive
 function Post(title, body, author) {
   this.title = title;
   this.body = body;
