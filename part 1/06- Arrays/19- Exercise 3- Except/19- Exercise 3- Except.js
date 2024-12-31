@@ -1,11 +1,9 @@
-const numbers = [1, 2, 3, 4];
+// ==================== Approach A: Using `includes` and Loop ====================
+const numbersA = [1, 2, 3, 4];
+const outputA = exceptA(numbersA, [1, 2]);
+console.log(outputA);
 
-const output = except(numbers, [1, 2]);
-
-console.log(output);
-
-// approach A: using includes function
-function except(array, excluded) {
+function exceptA(array, excluded) {
   let newArr = [];
   for (let element of array) {
     if (!excluded.includes(element)) {
@@ -14,12 +12,12 @@ function except(array, excluded) {
   }
   return newArr;
 }
-//
-// approach B: using filter on each iteration
-// function except(array, excluded) {
-//   let newArr = [];
-//   for (let element of excluded) {
-//     newArr = array.filter((n) => n !== element);
-//   }
-//   return newArr;
-// }
+
+// ==================== Approach B: Using `filter` ====================
+const numbersB = [1, 2, 3, 4, 5];
+const outputB = exceptB(numbersB, [1, 3]);
+console.log(outputB);
+
+function exceptB(arr, exclude) {
+  return arr.filter((n) => !exclude.includes(n));
+}
