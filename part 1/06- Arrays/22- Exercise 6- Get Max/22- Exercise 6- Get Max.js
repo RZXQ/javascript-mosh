@@ -1,25 +1,25 @@
 const numbers = [1, 5, 3, 4];
 
-const max = getMax(numbers);
+// ==================== Approach A: Using Traditional Loop ====================
+function getMaxTraditional(array) {
+  if (array.length === 0) return undefined;
 
-console.log(max);
+  let max = array[0];
+  for (let element of array) {
+    if (element > max) {
+      max = element;
+    }
+  }
+  return max;
+}
 
-// approach A: using traditional method
-// function getMax(array) {
-//   if (array.length === 0) return undefined;
-//
-//   let max = array[0];
-//   for (let element of array) {
-//     if (element > max) {
-//       max = element;
-//     }
-//   }
-//   return max;
-// }
-//
-// approach B: using reduce method
-function getMax(array) {
+console.log(getMaxTraditional(numbers));
+
+// ==================== Approach B: Using `reduce` Method ====================
+function getMaxReduce(array) {
   if (array.length === 0) return undefined;
 
   return array.reduce((a, b) => (a > b ? a : b));
 }
+
+console.log(getMaxReduce(numbers));
