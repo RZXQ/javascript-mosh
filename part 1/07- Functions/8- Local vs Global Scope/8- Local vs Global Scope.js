@@ -1,15 +1,16 @@
-// 1. Global scope, but it's generally good practice to avoid defining variables in the global scope,
-// as any function can overwrite them.
-const color = "red";
+// ==================== Global Scope ====================
+// - Avoid global variables when possible to prevent unintended overwrites.
+const color = "red"; // Global variable
 
+// ==================== Local Scope ====================
 function start() {
-  const message = "hi";
-  const color = "blue";
-  console.log(color); // Local variable 'color' takes precedence over the global variable 'color'.
+  const message = "hi"; // Local to 'start'
+  const color = "blue"; // Local 'color' shadows global 'color'
+  console.log(color); // Outputs: "blue"
 }
 
 function stop() {
-  const message = "hi"; // This variable is local to the 'stop' function and doesn't affect the global scope.
+  const message = "hi"; // Local to 'stop', independent of other functions
 }
 
-start();
+start(); // Calls 'start' and logs the local 'color'
