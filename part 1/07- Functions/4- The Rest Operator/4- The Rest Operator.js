@@ -3,7 +3,7 @@ function sum1(...args) {
   return args.reduce((a, b) => a + b);
 }
 
-console.log(sum1(1, 2, 3, 4, 5, 10)); // 25
+console.log(sum1(1, 2, 3, 4, 5, 10));
 
 // ==================== Rest Parameter with Additional Arguments ====================
 function sum2(discount, ...prices) {
