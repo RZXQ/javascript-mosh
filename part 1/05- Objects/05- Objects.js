@@ -74,40 +74,36 @@ const circleClone = { radius: 1, draw() {} };
 const another1 = { ...circleClone }; // Spread operator
 const another2 = Object.assign({ color: "yellow" }, circleClone);
 
-// ====================== 10. Garbage Collection ======================
-let gcCircle = {};
-console.log(gcCircle); // Auto memory management
+// ====================== 10. Math ======================
+Math.random();
+Math.round(1.9);
+Math.max(1, 2, 3);
+Math.min(1, 2, 3);
 
-// ====================== 11. Math ======================
-console.log(Math.random());
-console.log(Math.round(1.9));
-console.log(Math.max(1, 2, 3));
-console.log(Math.min(1, 2, 3));
-
-// ====================== 12. String ======================
+// ====================== 11. String ======================
 const message = "This is my first message";
-console.log(message.length);
-console.log(message[0]);
-console.log(message.includes("my"));
-console.log(message.includes("not"));
-console.log(message.startsWith("This"));
-console.log(message.startsWith("this"));
-console.log(message.endsWith("e"));
-console.log(message.indexOf("my"));
-console.log(message.replace("first", "second"));
-console.log(message.toUpperCase());
-console.log(message.toLowerCase());
-console.log(message.trim());
-console.log(message.trimStart());
-console.log(message.trimEnd());
-console.log(message.split(" "));
 
-// ====================== 13. Template Literals ======================
+// Read
+message.length;
+message[0];
+message.indexOf("my");
+message.includes("my");
+message.startsWith("This");
+message.endsWith("e");
+
+// Update
+message.toUpperCase();
+message.toLowerCase();
+message.trim();
+message.trimStart();
+message.trimEnd();
+message.replace("first", "second");
+message.split(" ");
+
+// ====================== 12. Template Literals ======================
 const name = "John";
 const greeting = `Hello, ${name}`;
-console.log(greeting);
 
-// ====================== 14. Date ======================
+// ====================== 13. Date ======================
 const now = new Date();
-console.log(now.toDateString());
-console.log(now.toISOString());
+now.toISOString();
