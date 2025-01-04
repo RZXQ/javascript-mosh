@@ -80,7 +80,10 @@ if (true) {
 console.log(y); // Output: 20
 
 // ==================== 10. The `this` Keyword ====================
+// Scope Definition: In JavaScript, a scope is defined by functions, modules, and blocks (using let or const).
+// The {} of an object is not a scope; it is merely a data structure used to store key-value pairs.
 // `this` depends on how the function is called.
+
 const obj = {
   method() {
     console.log(this); // Logs `obj`
