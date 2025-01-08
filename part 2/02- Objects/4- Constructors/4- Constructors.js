@@ -1,13 +1,20 @@
+// -----------------------------------------------------------
+// Constructor function to create Circle objects
+// -----------------------------------------------------------
+// When using the constructor function, three things happen:
+// 1. An empty object is created.
+// 2. Properties are initialized.
+// 3. The object (this) is returned.
 function Circle(radius) {
-  // demo or this
-  console.log("this", this);
   this.radius = radius;
   this.draw = function () {
     console.log("draw");
+    console.log(this);
   };
 }
 
-const circle1 = new Circle(1);
-Circle(2);
-
-console.log(circle);
+// -----------------------------------------------------------
+// Example usage
+// -----------------------------------------------------------
+const circle = new Circle(5);
+circle.draw();
