@@ -1,14 +1,18 @@
-// Factory function
+// -----------------------------------------------------------
+// Factory function to create circle objects
+// -----------------------------------------------------------
 function createCircle(radius) {
   return {
-    radius,
+    radius, // Circle radius
     draw() {
+      // Method to draw the circle
       console.log("draw");
     },
   };
 }
 
-const circle1 = createCircle(1);
-console.log(circle1);
-const circle2 = createCircle(2);
-console.log(circle2);
+// -----------------------------------------------------------
+// Create circle objects
+// -----------------------------------------------------------
+const circle1 = createCircle(1); // Circle with radius 1
+const circle2 = createCircle(2); // Circle with radius 2
