@@ -1,15 +1,15 @@
+// -----------------------------------------------------------
+// 2 properties and 1 method
+// -----------------------------------------------------------
 const circle = {
-  // properties
   radius: 1,
   location: {
     x: 1,
-    y: 1,
+    y: 2,
   },
   draw: function () {
-    // method
     console.log("draw");
   },
 };
 
-console.log(circle.radius);
-circle.draw();
+console.log();
