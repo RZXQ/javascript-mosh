@@ -5,16 +5,20 @@ function Circle(radius) {
   };
 }
 
-const circle = new Circle(10);
+const circle = new Circle(5);
 
-// 1. Adding a property using dot notation
+// -----------------------------------------------------------
+// Adding properties using dot notation
+// -----------------------------------------------------------
 circle.location = { x: 1 };
-// 2. Adding a property using bracket notation
-circle["location"] = { x: 2 };
 
-// 3. Dynamically accessing or setting a property
+// -----------------------------------------------------------
+// Adding properties using bracket notation
+// -----------------------------------------------------------
 const propertyName = "location";
-circle[propertyName] = { x: 3 };
+circle[propertyName] = { x: 1 };
 
-// 4. Deleting a property
+// -----------------------------------------------------------
+// Deleting a property
+// -----------------------------------------------------------
 delete circle.location;
