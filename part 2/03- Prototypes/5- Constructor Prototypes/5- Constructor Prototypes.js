@@ -1,3 +1,22 @@
+//             Constructor Function (e.g., Circle)
+//             +---------------------------+
+//             |       Circle(radius)      |
+//             +---------------------------+
+//                        |
+//                        | .prototype
+//                        v
+//             +---------------------------+
+// Parent       |     Circle.prototype     |
+// Prototype    | (Shared by all instances)|
+//             +---------------------------+
+//                ^
+//                | (.__proto__)
+//                | (Object.getPrototypeOf(circle))
+//                |
+//             +---------------------------+
+// Child        |        circle            |
+// Instance     | Instance of Circle       |
+//             +---------------------------+
 // ===========================================================
 //                      Circle Prototype
 // ===========================================================
