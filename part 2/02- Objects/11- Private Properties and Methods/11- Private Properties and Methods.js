@@ -1,88 +1,40 @@
 /*
-EXPLANATION OF CLOSURE IN THIS CODE:
+CLOSURE EXPLANATION:
 
-When you call `new Circle(10)`, the `Circle` function runs and creates:
- - Private variables: color, defaultLocation, and computeOptimumLocation
- - Public properties and methods: radius, draw
+In traditional OOP, private members are stored directly in the object and managed using access modifiers like `private`.
+In JavaScript, private variables are stored in the function's local scope and accessed through closures.
 
-Normally, once a function finishes executing, its local variables are no longer
-accessible and can be garbage-collected. However, in this case, the `draw` method,
-defined inside `Circle`, creates a closure. This closure captures the private
-variables, keeping them alive as long as the `draw` method exists.
+Key Differences:
 
-This means that even after the `Circle` function has returned the new object, `draw`
-still has access to `color`, `defaultLocation`, and `computeOptimumLocation`. Without
-the closure, you wouldn’t be able to directly access these private variables after
-`Circle` completes, but `draw` can still "see" them because it was defined in the same
-scope where those variables were created.
+| Feature         | Traditional OOP                          | JavaScript                          |
+|------------------|------------------------------------------|--------------------------------------|
+| **Storage**      | Inside the object's memory structure     | Local scope of the outer function   |
+| **Access**       | Controlled via `private`/`protected`     | Accessed via closures               |
+| **Persistence**  | Exists as long as the object exists      | Exists as long as the closure exists|
+| **Visibility**   | Hidden by access modifiers               | Not directly visible on the object  |
 
-As long as the circle object exists in memory, the draw method (and the closure it
-forms) will also exist in memory. Even if you never call circle.draw(), the closure is
-still there because the circle object references the draw method, and draw references
-the closure.
-
-In a closure, the nested inner function does not keep public properties (defined on
-`this`) as part of the closure context. Public properties are directly attached to the
-object instance (e.g., this.publicProp), so they do not belong to the local scope of the
-outer function. Closures only capture variables from the lexical scope (the local scope)
-of the outer function.
-
-What Happens After the Circle Function Completes?
-- Private Properties (color, defaultLocation):
-  - Private properties are declared as local variables (`let color`, `let defaultLocation`)
-    inside the `Circle` function.
-  - These variables exist only in the local scope of `Circle`.
-  - Once the `Circle` function finishes executing:
-    1. If no inner function (closure) references them, these private variables become
-       eligible for garbage collection because no part of the program retains a
-       reference to them.
-    2. Without a closure, they "die" immediately after the function execution ends.
-
-- Public Properties (this.radius):
-  - Public properties are attached to the `circle` object via `this` (e.g., `this.radius
-    = radius`).
-  - These properties are not tied to the `Circle` function's execution context. Instead,
-    they are part of the `circle` object itself, which persists in memory as long as the
-    `circle` object exists.
-  - Even after the `Circle` function completes, the public properties (`this.radius`)
-    remain accessible through the `circle` object.
-
-In simpler terms:
-- You can’t directly get `defaultLocation` from `circle` because it’s private.
-- But `draw` can still access `defaultLocation` due to the closure.
-- The closure is what allows `draw` to "remember" and use variables from `Circle`’s
-  scope even after `Circle` has finished executing.
-
-Diagram:
-Global Scope:
-  ├── Circle (constructor function)
-  ├── circle (instance of Circle)
-       ├── radius (public property, stored on the object itself)
-       ├── draw (public method, has access to closure)
-
-Circle Function Scope (captured by closure, referenced by draw):
-  ├── color (private variable, captured by closure)
-  ├── defaultLocation (private variable, captured by closure)
-  ├── computeOptimumLocation (private variable, captured by closure)
-
+In JavaScript, closures allow inner functions to "remember" and access variables from their outer function's scope, even after the outer function has returned.
 */
+
 function Circle(radius) {
+  // Private variables (stored in local scope, captured by closure)
   let color = "red";
   let defaultLocation = { x: 0, y: 0 };
   let computeOptimumLocation = function (factor) {
-    // Logic for computation
+    // ...
   };
 
-  this.radius = radius; // Public property
+  // Public property (stored on the object itself)
+  this.radius = radius;
 
+  // Public method (forms a closure)
   this.draw = function () {
     console.log("draw");
-    console.log(defaultLocation); // Accesses private variable due to closure
-    console.log(this.radius); // this.radius is not part of the closure context,
-    // even if you access it inside the draw method.
+    console.log(defaultLocation); // Access private variable via closure
+    console.log(this.radius); // Access public property directly
   };
 }
 
 const circle = new Circle(10);
-console.log(circle.defaultLocation); // undefined, not directly accessible
-circle.draw(); // Access private and public properties
+console.log(circle.defaultLocation); // undefined, private variables are not on the object
+circle.draw(); // Accesses private (via closure) and public properties
