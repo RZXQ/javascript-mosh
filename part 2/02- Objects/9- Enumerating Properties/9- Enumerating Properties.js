@@ -6,24 +6,29 @@ function Circle(radius) {
 }
 const circle = new Circle(10);
 
-// 1. Iterate over keys and values using `for...in`
-//    - Skip methods (function properties) using a conditional check
+// -----------------------------------------------------------
+// for...in
+// -----------------------------------------------------------
 for (let key in circle) {
-  if (typeof circle[key] !== "function") {
-    console.log(key);
-    console.log(circle[key]);
-  }
+  console.log(key, circle[key]);
 }
 
-// 2. Iterate over keys using `Object.keys(...)`
-for (let key of Object.keys(circle)) {
-  console.log(key);
-}
+// -----------------------------------------------------------
+// Object.keys()
+// -----------------------------------------------------------
+for (let key of Object.keys(circle)) console.log(key);
 
-// 3. Iterate over values using `Object.values(...)`
-for (let value of Object.values(circle)) {
-  console.log(value);
-}
+// -----------------------------------------------------------
+// Object.values()
+// -----------------------------------------------------------
+for (let value of Object.values(circle)) console.log(value);
 
-// 4. Use the `in` operator to check if a property exists
+// -----------------------------------------------------------
+// Object.entries()
+// -----------------------------------------------------------
+for (let [key, value] of Object.entries(circle)) console.log(key, value);
+
+// -----------------------------------------------------------
+// in operator
+// -----------------------------------------------------------
 console.log("radius" in circle);
