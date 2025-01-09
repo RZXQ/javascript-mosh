@@ -1,21 +1,25 @@
 function Circle(radius) {
-  let defaultLocation = {
-    x: 0,
-    y: 0,
-  };
+  let defaultLocation = { x: 0, y: 0 }; // Private variable
 
-  // Getter and Setter
+  // -----------------------------------------------------------
+  // Define getter and setter for defaultLocation
+  // -----------------------------------------------------------
   Object.defineProperty(this, "defaultLocation", {
     get: function () {
       return defaultLocation;
     },
     set: function (value) {
-      // some validations
       defaultLocation = value;
     },
   });
+
+  this.radius = radius; // Public property
+  this.draw = function () {
+    console.log("draw");
+  };
 }
 
-const circle = new Circle(10);
-circle.defaultLocation = { x: 1, y: 2 };
-console.log(circle.defaultLocation);
+// -----------------------------------------------------------
+const circle = new Circle(1);
+circle.defaultLocation = { x: 2, y: 2 }; // Setter is called
+console.log(circle.defaultLocation); // Getter is called
