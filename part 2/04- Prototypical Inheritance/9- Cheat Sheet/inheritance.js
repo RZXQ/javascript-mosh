@@ -1,7 +1,13 @@
+// --------------------------------------------------
+//                     Base Classes
+// --------------------------------------------------
 function Shape() {}
 function Circle() {}
 
-// Prototypical inheritance
+// --------------------------------------------------
+//                Prototypical Inheritance
+// --------------------------------------------------
+// Circle inherits from Shape
 Circle.prototype = Object.create(Shape.prototype);
 Circle.prototype.constructor = Circle;
 
@@ -10,8 +16,13 @@ function Rectangle(color) {
   Shape.call(this, color);
 }
 
-// Method overriding
+// --------------------------------------------------
+//                 Method Overriding
+// --------------------------------------------------
+// Base class method
 Shape.prototype.draw = function () {};
+
+// Derived class method
 Circle.prototype.draw = function () {
   // Call the base implementation
   Shape.prototype.draw.call(this);
@@ -19,11 +30,16 @@ Circle.prototype.draw = function () {
   // Do additional stuff here
 };
 
-// Don't create large inheritance hierarchies.
-// One level of inheritance is fine.
+// --------------------------------------------------
+//       Guidelines for Inheritance in JavaScript
+// --------------------------------------------------
+// - Don't create large inheritance hierarchies.
+// - One level of inheritance is fine.
 
-// Use mixins to combine multiple objects
-// and implement composition in JavaScript.
+// --------------------------------------------------
+//                   Using Mixins
+// --------------------------------------------------
+// Mixins combine multiple objects and implement composition in JavaScript.
 const canEat = {
   eat: function () {},
 };
@@ -38,6 +54,9 @@ function mixin(target, ...sources) {
   Object.assign(target, ...sources);
 }
 
+// --------------------------------------------------
+//                  Applying Mixins
+// --------------------------------------------------
 function Person() {}
 
 mixin(Person.prototype, canEat, canWalk);
