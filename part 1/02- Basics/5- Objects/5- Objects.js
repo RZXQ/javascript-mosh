@@ -1,14 +1,24 @@
-// Reference types in JavaScript: Object, Array, Function
+// ===========================================================
+//                   Reference Types in JavaScript
+// ===========================================================
+// Reference types include Object, Array, and Function.
 
-// Object literal
+// ===========================================================
+//                      Object Literal
+// ===========================================================
+
 const person = { name: "Ruizhi", age: 33 };
 console.log(person);
 
-// 1. Dot notation:
+// ===========================================================
+//                     Accessing Properties
+// ===========================================================
+
+// 1. Dot Notation
 person.name = "DOT";
 console.log(person);
 
-// 2. Bracket notation:
+// 2. Bracket Notation
 let selection = "property";
 person[selection] = "BRACKET";
 console.log(person);
