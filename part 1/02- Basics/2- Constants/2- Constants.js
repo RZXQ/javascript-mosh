@@ -1,2 +1,7 @@
-const interestRate = 0.3; // Constants cannot be reassigned
+// ===========================================================
+//                          Constants
+// ===========================================================
+// Note: Constants cannot be reassigned.
+
+const interestRate = 0.3;
 console.log(interestRate);
