@@ -1,9 +1,10 @@
-let selectedColors = ["red", "blue"]; // Initial array
-console.log(selectedColors[0]); // "red" - Accessing the first element
+// ===========================================================
+//                      Arrays in JavaScript
+// ===========================================================
 
-// -----------------------------------------------------------
-//               Adding Elements Dynamically
-// -----------------------------------------------------------
-selectedColors[2] = 1; // Adding a number to the array
-console.log(typeof selectedColors); // "object" - Arrays are treated as objects
-console.log(selectedColors.length); // 3 - The length updates dynamically
+let selectedColors = ["red", "blue"];
+console.log(selectedColors[0]); // "red"
+
+selectedColors[2] = 1; // Dynamically add an element
+console.log(typeof selectedColors); // "object"
+console.log(selectedColors.length); // 3
