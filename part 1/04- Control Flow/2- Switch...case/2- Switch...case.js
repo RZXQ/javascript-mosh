@@ -7,6 +7,6 @@ switch (role) {
   case "moderator":
     console.log("Moderator User");
     break;
-  default:
+  default: // optional
     console.log("Unknown User");
 }
