@@ -1,12 +1,17 @@
+// ===========================================================
+//                   Relational Operators
+// ===========================================================
+
 let x = 1;
+console.log(x > 0); // true (greater than)
+console.log(x >= 1); // true (greater than or equal to)
+console.log(x < 1); // false (less than)
+console.log(x <= 1); // true (less than or equal to)
 
-// Relational operators
-console.log(x > 0); // true (x is greater than 0)
-console.log(x >= 1); // true (x is greater than or equal to 1)
-console.log(x < 1); // false (x is not less than 1)
-console.log(x <= 1); // true (x is less than or equal to 1)
+// ===========================================================
+//                   Equality Operators
+// ===========================================================
 
-// Equality operators
-console.log(x == "1"); // true (loose equality, checks value only)
+console.log(x == "1"); // true (loose equality, checks value)
 console.log(x === 1); // true (strict equality, checks value and type)
-console.log(x !== 1); // false (x is equal to 1, so this is false)
+console.log(x !== 1); // false (strict not equal, value and type are the same)
