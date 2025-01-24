@@ -1,7 +1,8 @@
+// ===========================================================
+//           Assignment Operators in JavaScript
+// ===========================================================
+
 let x = 10;
 
-x = x + 5; // Addition assignment
-x += 5; // Addition assignment (shorthand)
-
-x = x * 3; // Multiplication assignment
-x *= 3; // Multiplication assignment (shorthand)
+x += 5; // Addition assignment operator
+x *= 3; // Multiplication assignment operator
