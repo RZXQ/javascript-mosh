@@ -1,21 +1,30 @@
-// Logical OR (||):
-// - Evaluates from left to right.
-// - Returns the first truthy value it encounters.
-// - If no truthy value is found, it returns the last falsy value.
-console.log(false || "Reacher"); // "Reacher" (first truthy value)
-console.log(false || 1); // 1 (first truthy value)
-console.log(false || 1 || 2); // 1 (first truthy value)
+// ===========================================================
+//                  Falsy Values (6 in Total)
+// ===========================================================
+/* 0, NaN, '', false, undefined, null */
 
-// Logical AND (&&):
-// - Evaluates from left to right.
-// - Returns the first falsy value it encounters.
-// - If no falsy value is found, it returns the last truthy value.
-console.log(true && "Reacher"); // "Reacher" (last truthy value)
-console.log(false && "Reacher"); // false (first falsy value)
-console.log("Hello" && 42); // 42 (last truthy value)
-console.log(0 && "Reacher"); // 0 (first falsy value)
-console.log(null && "Anything"); // null (first falsy value)
+// ===========================================================
+//                  Logical OR (||) Operator
+// ===========================================================
+// Returns the first truthy value or the last falsy value.
+console.log(false || "Reacher"); // "Reacher"
+console.log(false || 1); // 1
+console.log(false || 1 || 2); // 1
 
-// Example: Assigning Default Values with OR
-let currentColor = undefined || "blue"; // Uses "blue" because undefined is falsy
+// ===========================================================
+//                  Logical AND (&&) Operator
+// ===========================================================
+// Returns the first falsy value or the last truthy value.
+console.log(true && "Reacher"); // "Reacher"
+console.log(false && "Reacher"); // false
+console.log("Hello" && 42); // 42
+console.log(0 && "Reacher"); // 0
+console.log(null && "Anything"); // null
+
+// ===========================================================
+//        Example: Assigning Default Values with OR (||)
+// ===========================================================
+let userColor = undefined;
+let defaultColor = "blue";
+let currentColor = userColor || defaultColor; // Returns "blue" (userColor is falsy)
 console.log(currentColor); // "blue"
