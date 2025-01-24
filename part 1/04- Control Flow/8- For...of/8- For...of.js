@@ -1,9 +1,6 @@
+// ===========================================================
+//                Array Iteration: for...of
+// ===========================================================
+
 const colors = ["red", "green", "blue"];
-
-for (let i in colors) {
-  console.log(i);
-}
-
-for (let i of colors) {
-  console.log(i);
-}
+for (let color of colors) console.log(color); // Outputs each value
