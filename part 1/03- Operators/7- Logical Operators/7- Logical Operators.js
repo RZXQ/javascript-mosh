@@ -1,13 +1,22 @@
-// Logical AND
-let highIncome = false;
-let highGoodCreditScore = true; // Corrected variable name
-let eligibleForLoan = highIncome && highGoodCreditScore;
-console.log("Eligible for Loan (AND):", eligibleForLoan); // Output: false
+// ===========================================================
+//                Logical AND (&&) Operator
+// ===========================================================
 
-// Logical OR
-eligibleForLoan = highIncome || highGoodCreditScore; // Reassigning the same variable
-console.log("Eligible for Loan (OR):", eligibleForLoan); // Output: true
+let income = false;
+let creditScore = true;
+let isEligible = income && creditScore;
+console.log("Eligible (AND):", isEligible); // false
 
-// Logical NOT
-let applicationRefused = !eligibleForLoan;
-console.log("Application Refused:", applicationRefused); // Output: false
+// ===========================================================
+//                Logical OR (||) Operator
+// ===========================================================
+
+isEligible = income || creditScore;
+console.log("Eligible (OR):", isEligible); // true
+
+// ===========================================================
+//                 Logical NOT (!) Operator
+// ===========================================================
+
+let isRefused = !isEligible;
+console.log("Application Refused:", isRefused); // false
