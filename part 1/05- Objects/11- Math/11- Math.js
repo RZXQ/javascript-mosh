@@ -1,18 +1,13 @@
-// ==================== Math.random() ====================
+// ===========================================================
+//                        Math Methods
+// ===========================================================
 
-console.log(Math.random());
-const min = 10;
-const max = 20;
-console.log(Math.random() * (max - min) + min); // inclusive
+console.log(Math.random()); // Random >= 0 and < 1
+console.log(Math.random() * (max - min) + min); // Random >= min and < max
 
-// ==================== Math.round() ====================
+console.log(Math.max(1, 2, 3, 4, 5)); // 5
+console.log(Math.min(1, 2, 3, 4, 5)); // 1
 
-console.log(Math.round(1.9));
-
-// ==================== Math.max() ====================
-
-console.log(Math.max(1, 2, 3, 4, 5));
-
-// ==================== Math.min() ====================
-
-console.log(Math.min(1, 2, 3, 4, 5));
+console.log(Math.round(1.9)); // 2
+console.log(Math.ceil(1.1)); // 2
+console.log(Math.floor(1.9)); // 1
