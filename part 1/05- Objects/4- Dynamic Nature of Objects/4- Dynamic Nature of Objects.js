@@ -1,9 +1,16 @@
-const circle = { radius: 1 }; // Object properties can be added or removed dynamically
+const circle = { radius: 1 };
 
-circle.color = "yellow"; // Adding a new property.
+// ===========================================================
+//                      Add Properties
+// ===========================================================
+circle.color = "yellow";
 circle.draw = function () {
   console.log("Drawing the circle");
-};
-delete circle.draw; // Removing a property
+}; // Add a new method
+
+// ===========================================================
+//                     Remove Properties
+// ===========================================================
+delete circle.draw;
 
 console.log(circle);
