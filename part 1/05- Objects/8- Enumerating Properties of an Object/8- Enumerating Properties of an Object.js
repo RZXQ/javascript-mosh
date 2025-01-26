@@ -1,38 +1,35 @@
-// ==================== Object Definition ====================
+// ===========================================================
+//                     Primitive Types
+// ===========================================================
+let x1 = 10;
+let y1 = x1;
+x1 = 20;
+console.log(x1, y1); // 20, 10
 
-const circle = {
-  radius: 1,
-  draw() {
-    console.log("draw");
-  },
-};
+// ===========================================================
+//                    Reference Types
+// ===========================================================
+let x2 = { value: 10 };
+let y2 = x2;
+x2.value = 20;
+console.log(x2, y2); // { value: 20 }, { value: 20 }
 
-// ==================== for...in Loop ====================
-
-for (let key in circle) {
-  console.log(key, circle[key]);
+// ===========================================================
+//            Primitive Types in Function
+// ===========================================================
+let number = 10;
+function increase1(number) {
+  number++;
 }
+increase1(number);
+console.log(number); // 10
 
-// ==================== for...of with Object.keys ====================
-
-for (let key of Object.keys(circle)) {
-  console.log(key);
+// ===========================================================
+//            Reference Types in Function
+// ===========================================================
+let obj = { value: 10 };
+function increase2(obj) {
+  obj.value++;
 }
-
-// ==================== for...of with Object.values ====================
-
-for (let value of Object.values(circle)) {
-  console.log(value);
-}
-
-// ==================== for...of with Object.entries ====================
-
-for (let entry of Object.entries(circle)) {
-  console.log(entry);
-}
-
-// ==================== Property Existence Check ====================
-
-if ("radius" in circle) {
-  console.log("yes");
-}
+increase2(obj);
+console.log(obj); // { value: 11 }
