@@ -1,17 +1,26 @@
+// ===========================================================
+//                          concat()
+// ===========================================================
+
 const first = [{ id: 1 }, 3];
 const second = [4, 5, 6];
 
-// ==================== 1. concat() ====================
 const combined = first.concat(second);
 first[0].id = 10; // Modifies the object in `first`, reflected in `combined`
+console.log(combined); // [{ id: 10 }, 3, 4, 5, 6]
 
-// ==================== 2. slice() ====================
+// ===========================================================
+//                          slice()
+// ===========================================================
 
-// 2. slice(): Extracts parts of an array and returns a new array
+// --- Extract elements from index 2 to 4 (exclusive) ---
 const slice1 = combined.slice(2, 4);
+console.log(slice1); // [4, 5]
 
-// --- 2.2 Extract from startIndex to the end ---
+// --- Extract from start index to the end ---
 const slice2 = combined.slice(2);
+console.log(slice2); // [4, 5, 6]
 
-// --- 2.3 Create a shallow copy of the entire array ---
+// --- Create a shallow copy of the entire array ---
 const slice3 = combined.slice();
+console.log(slice3); // [{ id: 10 }, 3, 4, 5, 6]
