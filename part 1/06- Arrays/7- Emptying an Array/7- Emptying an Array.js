@@ -1,13 +1,31 @@
+// ===========================================================
+//                           numbers=[]
+// ===========================================================
+
 let numbers = [1, 2, 3, 4];
-
-// --- 1. Reassign to an Empty Array ---
 numbers = [];
+console.log(numbers); // []
 
-// --- 2. Set Length to 0 ---
+// ===========================================================
+//                      numbers.length = 0
+// ===========================================================
+
+numbers = [1, 2, 3, 4];
 numbers.length = 0;
+console.log(numbers); // []
 
-// --- 3. Use Splice to Remove All Elements ---
+// ===========================================================
+//                numbers.splice(0, numbers.length)
+// ===========================================================
+
+numbers = [1, 2, 3, 4];
 numbers.splice(0, numbers.length);
+console.log(numbers); // []
 
-// --- 4. Use While Loop with Pop ---
+// ===========================================================
+//                while (numbers.length > 0) numbers.pop()
+// ===========================================================
+
+numbers = [1, 2, 3, 4];
 while (numbers.length > 0) numbers.pop();
+console.log(numbers); // []
