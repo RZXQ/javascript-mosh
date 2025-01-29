@@ -3,7 +3,10 @@ const courses = [
   { id: 2, name: "b" },
 ];
 
-// --- 1. find(predicate) ---
+// ===========================================================
+//                      find()
+// ===========================================================
+
 const course1 = courses.find(function (course) {
   return course.id === 1;
 });
@@ -12,6 +15,8 @@ console.log(course1);
 const course2 = courses.find((course) => course.id === 1);
 console.log(course2);
 
-// --- 2. findIndex(predicate) ---
+// ===========================================================
+//                      findIndex()
+// ===========================================================
 const course3 = courses.findIndex((course) => course.name === "b");
 console.log(course3);
