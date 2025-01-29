@@ -1,15 +1,24 @@
+// ===========================================================
+//                          numbers.pop()
+// ===========================================================
+
 const numbers = [1, 2, 3, 4];
-
-// --- 1. Remove from the End ---
 const last = numbers.pop();
-console.log(last);
-console.log(numbers);
+console.log(last); // 4
+console.log(numbers); // [1, 2, 3]
 
-// --- 2. Remove from the Beginning ---
+// ===========================================================
+//                          numbers.shift()
+// ===========================================================
+
 const first = numbers.shift();
-console.log(first);
-console.log(numbers);
+console.log(first); // 1
+console.log(numbers); // [2, 3]
 
-// --- 3. Remove from the Middle ---
-numbers.splice(1, 1);
-console.log(numbers);
+// ===========================================================
+//                        numbers.splice()
+// ===========================================================
+
+const removed = numbers.splice(1, 1);
+console.log(removed); // [3]
+console.log(numbers); // [2]
