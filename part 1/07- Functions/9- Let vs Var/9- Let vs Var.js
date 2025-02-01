@@ -1,23 +1,41 @@
-// ==================== Scope Issue: `var` vs `let` ====================
+// ===========================================================
+//                     Scope: `var` vs `let` vs `const`
+// ===========================================================
+// `var` is function-scoped; `let` and `const` are block-scoped.
 function start() {
-  for (var i = 0; i < 5; i++) {
-    console.log(i); // Logs 0 through 4
-  }
-  console.log(i); // Logs 5 (accessible outside the loop due to `var`)
+  for (var i = 0; i < 5; i++) console.log(i);
+  console.log(i); // `var` leaks outside the loop
+}
+
+function startWithLet() {
+  for (let j = 0; j < 5; j++) console.log(j);
+  // console.log(j); // Error: `let` is block-scoped
 }
 
 start();
+startWithLet();
 
-// ==================== Global Variables and the `window` Object ====================
-var color = "red"; // `var` attaches to `window`
-let age = 30; // `let` does not attach to `window`
+const x = 10;
+// x = 20; // Error: `const` cannot be reassigned
 
-console.log(window.color); // Logs: "red"
-console.log(window.age); // Logs: undefined
+// ===========================================================
+//                 Global Scope and `window` Object
+// ===========================================================
+// `var` attaches to `window`; `let` and `const` do not.
+var color = "red";
+let age = 30;
 
-// ==================== Functions in Global Scope ====================
+console.log(window.color); // "red"
+console.log(this.color); // "red" (same as `window.color`)
+console.log(window.age); // undefined
+
+// ===========================================================
+//               Functions in Global Scope
+// ===========================================================
+// Function declarations attach to `window` in global scope.
 function sayHi() {
-  console.log("hi");
+  return "hi";
 }
 
-console.log(window.sayHi()); // Logs: "hi"
+console.log(window.sayHi()); // "hi"
+console.log(this.sayHi()); // "hi"
