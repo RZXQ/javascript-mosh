@@ -1,16 +1,20 @@
-// ==================== Global Scope ====================
-// - Avoid global variables when possible to prevent unintended overwrites.
-const color = "red"; // Global variable
+// ===========================================================
+//                           Scope in JavaScript
+// ===========================================================
 
-// ==================== Local Scope ====================
+// ========================== Global Scope ==========================
+// - Avoid global variables to prevent unintended overwrites.
+const color = "red";
+
+// ========================== Local Scope ==========================
 function start() {
   const message = "hi"; // Local to 'start'
-  const color = "blue"; // Local 'color' shadows global 'color'
+  const color = "blue"; // Shadows global 'color'
   console.log(color); // Outputs: "blue"
 }
 
 function stop() {
-  const message = "hi"; // Local to 'stop', independent of other functions
+  const message = "hi"; // Local to 'stop', independent of 'start'
 }
 
-start(); // Calls 'start' and logs the local 'color'
+start(); // Logs: "blue"
