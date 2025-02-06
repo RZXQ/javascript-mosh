@@ -1,6 +1,6 @@
-// -----------------------------------------------------------
-// Constructor function
-// -----------------------------------------------------------
+/* -----------------------------------------------------------
+ *                  Constructor function
+ * ----------------------------------------------------------- */
 function Circle(radius) {
   console.log(arguments);
   this.radius = radius;
@@ -9,19 +9,26 @@ function Circle(radius) {
   };
 }
 
-// -----------------------------------------------------------
-// Function metadata
-// -----------------------------------------------------------
+/* -----------------------------------------------------------
+ *                 Function metadata
+ * ----------------------------------------------------------- */
 console.log(Circle.name); // Logs the function name: "Circle"
 console.log(Circle.length); // Logs the number of expected parameters: 1
 console.log(Circle.constructor); // Logs the Function constructor
 
-// -----------------------------------------------------------
-// Function calls with explicit this binding
-// -----------------------------------------------------------
+/* -----------------------------------------------------------
+ *                        call
+ * ----------------------------------------------------------- */
 const circle = {};
+Circle.call(circle, 1); // Calls Circle immediately with `this` bound to `circle`
 
-Circle.call(circle, 1); // Invokes Circle with `this` bound to `circle`
-Circle.apply(circle, [1]); // Same as call, but arguments are in an array
+/* -----------------------------------------------------------
+ *                        apply
+ * ----------------------------------------------------------- */
+Circle.apply(circle, [1]); // Calls Circle immediately with `this` bound to `circle`, arguments as an array
+
+/* -----------------------------------------------------------
+ *                        bind
+ * ----------------------------------------------------------- */
 const boundCircle = Circle.bind(circle);
-boundCircle(1); // Returns a new function with `this` bound to `circle`, then invokes it
+boundCircle(1); // Returns a new function with `this` bound to `circle`, does NOT call immediately
