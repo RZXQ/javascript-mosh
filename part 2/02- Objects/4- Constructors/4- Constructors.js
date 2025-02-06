@@ -1,6 +1,6 @@
-// -----------------------------------------------------------
-// Constructor function to create Circle objects
-// -----------------------------------------------------------
+/* -----------------------------------------------------------
+ *           Constructor function to create Circle objects
+ * ----------------------------------------------------------- */
 // When using the constructor function, three things happen:
 // 1. An empty object is created.
 // 2. Properties are initialized.
@@ -13,8 +13,8 @@ function Circle(radius) {
   };
 }
 
-// -----------------------------------------------------------
-// Example usage
-// -----------------------------------------------------------
+/* -----------------------------------------------------------
+ *                    Example usage
+ * ----------------------------------------------------------- */
 const circle = new Circle(5);
 circle.draw();
