@@ -42,3 +42,5 @@ for (let key in circ) {
 console.log(circ.hasOwnProperty("radius")); // true
 console.log(circ.hasOwnProperty("move")); // true
 console.log(circ.hasOwnProperty("draw")); // false (draw is on the prototype)
+console.log(Object.hasOwnProperty("toString")); // false (toString is on the prototype)
+console.log(Object.prototype.hasOwnProperty("toString")); // true
