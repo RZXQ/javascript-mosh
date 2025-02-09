@@ -11,7 +11,7 @@ console.log(descriptor); // Logs the property descriptor for `toString`
 //                      Set Property Descriptor
 // ===========================================================
 Object.defineProperty(person, "name", {
-  writable: false, // The value cannot be modified (read-only)
+  writable: false, // The value cannot be overwrite(read-only)
   enumerable: false, // The property will not appear in enumeration
   configurable: false, // The descriptor cannot be redefined or deleted
 });
