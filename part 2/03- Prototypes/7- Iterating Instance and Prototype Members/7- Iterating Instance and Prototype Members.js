@@ -1,9 +1,9 @@
 // ===========================================================
-//                      Circle Constructor
+//                  Circle Constructor
 // ===========================================================
-function Circle(radius) {
+function Circle(r) {
   // Instance property
-  this.radius = radius;
+  this.radius = r;
 
   // Instance method
   this.move = function () {
@@ -16,24 +16,29 @@ Circle.prototype.draw = function () {
   console.log("draw");
 };
 
-const c1 = new Circle(1);
+const circ = new Circle(1);
 
 // ===========================================================
-//                  Iterating Over Keys
+//                  Iterating with for...of
+// Note: Object.keys() => returns only own (instance) enumerable properties
 // ===========================================================
-// `Object.keys()` only returns **own (instance) enumerable properties**
-console.log(Object.keys(c1)); // ["radius", "move"]
-
-// `for...in` loop returns all **enumerable keys**
-// Includes both instance (own) and prototype enumerable keys
-for (let key in c1) {
-  console.log(key, c1[key]); // Logs both properties and methods
+for (let key of Object.keys(circ)) {
+  console.log("for...of =>", key); // "radius", "move"
 }
 
 // ===========================================================
-//               Checking for Own Keys
+//                  Iterating with for...in
+// Note: for...in => returns all enumerable keys (instance + prototype)
 // ===========================================================
-// `hasOwnProperty` checks only **own (instance) keys**
-console.log(c1.hasOwnProperty("radius")); // true (instance property)
-console.log(c1.hasOwnProperty("move")); // true (instance method)
-console.log(c1.hasOwnProperty("draw")); // false (prototype method)
+for (let key in circ) {
+  console.log("for...in =>", key, circ[key]);
+  // Logs "radius", "move", and also "draw"
+}
+
+// ===========================================================
+//                Checking for Own Keys
+// Note: hasOwnProperty => checks only own (instance) keys
+// ===========================================================
+console.log(circ.hasOwnProperty("radius")); // true
+console.log(circ.hasOwnProperty("move")); // true
+console.log(circ.hasOwnProperty("draw")); // false (draw is on the prototype)
