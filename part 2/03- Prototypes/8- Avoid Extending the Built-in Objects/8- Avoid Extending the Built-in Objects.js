@@ -1,4 +1,6 @@
-// Don't modify objects you don't own!
+// ===========================================================
+//                   Don't Modify Objects You Don't Own!
+// ===========================================================
 
 Array.prototype.shuffle = function () {
   // ...
