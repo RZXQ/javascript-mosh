@@ -1,21 +1,33 @@
 // ===========================================================
-// 1. Before: c1, c2 Each Have a Copy of the draw Method
+// 1. Prototype Inheritance (inherit this.draw method)
 // ===========================================================
 function Circle(radius) {
   this.radius = radius;
-  this.draw = function () {
-    console.log("draw");
-  };
 }
 
-const c1_old = new Circle(1);
-const c2_old = new Circle(2);
+Circle.prototype.draw = function () {
+  console.log("draw");
+};
+
+const c1 = new Circle(1);
+const c2 = new Circle(2);
+console.log(c1); // Circle { radius: 1 }
+console.log(c2); // Circle { radius: 2 }
 
 // ===========================================================
-// 2. After: Shared draw Method via Prototype
+// 2. Overwrite the Default toString (from Object Base)
 // ===========================================================
-function Circle(radius) {
-  // Instance members
+Circle.prototype.toString = function () {
+  return `Circle with radius ${this.radius}`;
+};
+
+console.log(c1.toString()); // "Circle with radius 1"
+console.log(c2.toString()); // "Circle with radius 2"
+
+// ===========================================================
+// 3. Instance Members Call Prototype Members and Vice Versa
+// ===========================================================
+function CircleEx(radius) {
   this.radius = radius;
   this.move = function () {
     this.draw(); // Call the prototype method
@@ -23,22 +35,11 @@ function Circle(radius) {
   };
 }
 
-// Prototype members
-Circle.prototype.draw = function () {
+CircleEx.prototype.draw = function () {
   this.move(); // Call the instance method
   console.log("draw");
 };
 
-const c1 = new Circle(1);
-const c2 = new Circle(2);
-
-// ===========================================================
-// 3. Practical Use Case: Overwrite Default toString
-// ===========================================================
-Circle.prototype.toString = function () {
-  return `Circle with radius ${this.radius}`;
-};
-
-// Testing
-console.log(c1.toString()); // "Circle with radius 1"
-console.log(c2.toString()); // "Circle with radius 2"
+const c3 = new CircleEx(3);
+c3.move(); // "draw", "move"
+c3.draw(); // "draw", "move"
