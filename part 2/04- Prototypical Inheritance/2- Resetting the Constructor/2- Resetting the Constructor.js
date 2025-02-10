@@ -1,18 +1,36 @@
 // ===========================================================
-//                      Base Class: Shape
+//                      Parent Class: Shape
 // ===========================================================
 function Shape() {}
+
 Shape.prototype.duplicate = () => console.log("duplicate");
 
 // ===========================================================
-//                  Derived Class: Circle
+//                  Child Class: Circle
 // ===========================================================
 function Circle(radius) {
   this.radius = radius;
 }
 
-Circle.prototype = Object.create(Shape.prototype); // Inherits Shape's prototype
-Circle.prototype.constructor = Circle; // Resets constructor from Shape to Circle
+// ===========================================================
+//                  Object.create() Mechanism
+// ===========================================================
+// Object.create() does not copy the prototype object but sets the new object's
+// __proto__ directly to the provided prototype (e.g., Shape.prototype), forming
+// a prototype chain. Example:
+//   Circle.prototype = Object.create(Shape.prototype);
+// Here, Circle.prototype is a new object with __proto__ pointing to Shape.prototype,
+// creating a single-layer reference instead of duplicating Shape.prototype.
+Circle.prototype = Object.create(Shape.prototype); // Inherit Shape's prototype
+
+// ===========================================================
+//                  Why Reset Constructor?
+// ===========================================================
+// Circle.prototype → Shape.prototype (created via Object.create)
+// Shape.prototype.constructor → Shape
+// Circle.prototype.constructor implicitly inherits from Shape.prototype.constructor,
+// pointing to Shape.
+Circle.prototype.constructor = Circle; // Reset constructor from Shape to Circle
 
 // ===========================================================
 //                      Usage Example
