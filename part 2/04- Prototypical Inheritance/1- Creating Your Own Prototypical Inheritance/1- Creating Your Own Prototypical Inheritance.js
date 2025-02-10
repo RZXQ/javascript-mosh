@@ -1,19 +1,23 @@
 // ===========================================================
-//                      Base Class: Shape
+//                      Parent Class: Shape
 // ===========================================================
 
 function Shape() {}
-Shape.prototype.duplicate = function () {
-  console.log("duplicate");
+
+Shape.prototype.sharedFunction = function () {
+  console.log("sharedFunction");
 };
 
 // ===========================================================
-//                  Derived Class: Circle
+//                  Child Class: Circle
 // ===========================================================
+// Note: Chrome DevTools' right-side panel displays the [[Prototype]] property,
+//       which points to the direct prototype of the current object.
 
 function Circle(radius) {
   this.radius = radius;
 }
+
 Circle.prototype = Object.create(Shape.prototype);
 Circle.prototype.draw = function () {
   console.log("draw");
