@@ -1,16 +1,22 @@
 // ===========================================================
 //                      Parent Class: Shape
 // ===========================================================
-function Shape() {}
+function Shape(color) {
+  this.color = color;
+}
 
 Shape.prototype.duplicate = function () {
+  console.log(this.color); // Demonstrates the use of the 'color' property
   console.log("duplicate");
 };
 
 // ===========================================================
 //                  Child Class: Circle
 // ===========================================================
-function Circle() {}
+function Circle(color, radius) {
+  Shape.call(this, color); // Call the parent constructor with 'this' and 'color'
+  this.radius = radius;
+}
 
 // ===========================================================
 //                    Utility Function: extend
@@ -27,15 +33,14 @@ extend(Circle, Shape);
 
 // ===========================================================
 //                   Method Override: Circle
-// Note: JavaScript will find the first method from the prototype chain
 // ===========================================================
 Circle.prototype.duplicate = function () {
-  Shape.prototype.duplicate.call(this); // Call parent method with correct `this` binding
+  Shape.prototype.duplicate.call(this); // Call parent method with correct 'this' binding
   console.log("duplicate circle");
 };
 
 // ===========================================================
 //                      Usage Example
 // ===========================================================
-const circleInstance = new Circle();
-circleInstance.duplicate(); // Output: "duplicate" followed by "duplicate circle"
+const circleInstance = new Circle("red", 5);
+circleInstance.duplicate();
