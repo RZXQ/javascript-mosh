@@ -1,13 +1,5 @@
 // ===========================================================
-// Note:
-// If the parent method `duplicate` does not use `this`,
-// we can directly call it as `Shape.prototype.duplicate()`.
-// However, if the parent method relies on `this`, we must bind the current instance
-// by using `Shape.prototype.duplicate.call(this)` to ensure the correct context.
-// ===========================================================
-
-// ===========================================================
-//                      Base Class: Shape
+//                      Parent Class: Shape
 // ===========================================================
 function Shape() {}
 
@@ -16,14 +8,9 @@ Shape.prototype.duplicate = function () {
 };
 
 // ===========================================================
-//                  Derived Class: Circle
+//                  Child Class: Circle
 // ===========================================================
 function Circle() {}
-
-// ===========================================================
-//                  Derived Class: Square
-// ===========================================================
-function Square() {}
 
 // ===========================================================
 //                    Utility Function: extend
@@ -37,10 +24,10 @@ function extend(Child, Parent) {
 //                      Extend Classes
 // ===========================================================
 extend(Circle, Shape);
-extend(Square, Shape);
 
 // ===========================================================
 //                   Method Override: Circle
+// Note: JavaScript will find the first method from the prototype chain
 // ===========================================================
 Circle.prototype.duplicate = function () {
   Shape.prototype.duplicate.call(this); // Call parent method with correct `this` binding
@@ -50,7 +37,5 @@ Circle.prototype.duplicate = function () {
 // ===========================================================
 //                      Usage Example
 // ===========================================================
-const c = new Circle();
-const d = new Square();
-
-c.duplicate(); // Output: "duplicate" followed by "duplicate circle"
+const circleInstance = new Circle();
+circleInstance.duplicate(); // Output: "duplicate" followed by "duplicate circle"
