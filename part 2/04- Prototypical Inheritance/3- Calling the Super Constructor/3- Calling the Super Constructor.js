@@ -1,11 +1,5 @@
 // ===========================================================
-// Note: We use Shape.call(this, color) instead of adding `color` in the prototype
-// because instance properties like `color` are unique to each object.
-// Adding it in the prototype would make it shared among all instances, which is not desired.
-// ===========================================================
-
-// ===========================================================
-//                      Base Class: Shape
+//                      Parent Class: Shape
 // ===========================================================
 function Shape(color) {
   this.color = color;
@@ -14,10 +8,14 @@ Shape.prototype.duplicate = () => console.log("duplicate");
 Shape.prototype.sharedProperty = "shared";
 
 // ===========================================================
-//                  Derived Class: Circle
+//                  Child Class: Circle
+// Note: All three approaches work:
+// 1. Shape.call(this, color);
+// 2. Shape.apply(this, [color]);
+// 3. Shape.bind(this)(color);
 // ===========================================================
 function Circle(radius, color) {
-  // Shape.call(this, color); // or using Shape.apply(this, [color]) or using Shape.bind(this)(color)
+  // Shape(color); // This would assign color property to window object
   Shape.call(this, color); // Call base class constructor directly to initialize instance properties
   this.radius = radius;
 }
@@ -28,6 +26,6 @@ Circle.prototype.constructor = Circle;
 // ===========================================================
 //                      Usage Example
 // ===========================================================
-const c = new Circle(1, "red");
-console.log(c);
-console.log(c.sharedProperty);
+const circleInstance = new Circle(1, "red");
+console.log(circleInstance);
+console.log(circleInstance.sharedProperty);
