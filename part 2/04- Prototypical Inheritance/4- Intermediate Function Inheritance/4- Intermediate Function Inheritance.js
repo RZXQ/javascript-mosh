@@ -1,5 +1,5 @@
 // ===========================================================
-//                      Base Class: Shape
+//                      Parent Class: Shape
 // ===========================================================
 function Shape(color) {
   this.color = color;
@@ -10,7 +10,7 @@ Shape.prototype.duplicate = function () {
 };
 
 // ===========================================================
-//                  Derived Class: Circle
+//                  Child Class: Circle
 // ===========================================================
 function Circle(radius, color) {
   Shape.call(this, color); // Call base class constructor
@@ -18,7 +18,7 @@ function Circle(radius, color) {
 }
 
 // ===========================================================
-//                  Derived Class: Square
+//                  Child Class: Square
 // ===========================================================
 function Square(size) {
   this.size = size;
@@ -26,6 +26,7 @@ function Square(size) {
 
 // ===========================================================
 //                    Utility Function: extend
+// Note: called extend Child with Parent
 // ===========================================================
 function extend(Child, Parent) {
   Child.prototype = Object.create(Parent.prototype); // Set up inheritance
