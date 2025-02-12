@@ -1,6 +1,8 @@
 // ===========================================================
 // Note:
-// Favor composition over inheritance:
-// - Instead of creating a deep inheritance hierarchy, we use composition to
-//   delegate behavior, making the code more flexible and easier to maintain.
+// 1. Prefer composition over inheritance:
+//    - Use composition to delegate behavior instead of relying on deep inheritance hierarchies,
+//      resulting in more flexible and maintainable code.
+// 2. Limit inheritance depth:
+//    - If using inheritance, restrict it to a single level.
 // ===========================================================
