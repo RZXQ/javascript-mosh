@@ -1,29 +1,29 @@
 // ===========================================================
 //                    Mixin Utility Function
 // ===========================================================
-// ...sources: rest operator
+// ...sources: Rest operator
 function mixin(target, ...sources) {
-  Object.assign(target, ...sources); // ...sources: Spread operator to apply all source properties to target
+  Object.assign(target, ...sources); // ...sources: Spread operator
 }
 
 // ===========================================================
-//                    Shared Behaviors
+//                    Mixin Behaviors
 // ===========================================================
 const canEat = {
-  eat: function () {
+  eat() {
     this.hunger--;
     console.log("eating");
   },
 };
 
 const canWalk = {
-  walk: function () {
+  walk() {
     console.log("walking");
   },
 };
 
 const canSwim = {
-  swim: function () {
+  swim() {
     console.log("swimming");
   },
 };
