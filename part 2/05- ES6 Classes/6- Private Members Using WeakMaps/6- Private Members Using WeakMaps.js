@@ -1,51 +1,50 @@
 /*
 ==================================================
-             Why is it called WeakMap?
+            WeakMap Overview & Comparison
 ==================================================
-WeakMap is a dictionary where keys must be objects.
-- The "weak" reference means that if there are no other references to a key object,
-  both the key and its associated value in the WeakMap will be garbage collected.
-- This prevents memory leaks when using private data for objects.
+- WeakMap keys must be objects.
+- "Weak" means that if no other references to a key exist,
+  both key and its value can be garbage collected.
+- Ideal for storing private data without polluting the object.
 
-==================================================
-             Comparing WeakMap and Symbol
-==================================================
-| Feature             | WeakMap                                                                                     | Symbol                                                                                     |
-|---------------------|---------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| Garbage Collection  | Keys are weakly referenced, so private data is garbage collected when the object is unused. | Properties remain attached to the object and persist until the object itself is garbage collected. |
-| Accessibility       | Fully private; only accessible if you have a reference to the WeakMap.                     | Private-like; can still be accessed using Object.getOwnPropertySymbols().                |
-| Complexity          | Requires maintaining an external WeakMap for private data.                                 | Simpler to implement; properties are stored directly on the object.                      |
-| Performance         | Slightly slower because WeakMap is an external data structure.                             | Faster as no external structure is needed.                                               |
-| Use Case            | Ideal for strong encapsulation and when private data should not pollute the object itself. | Best for lightweight private properties where full encapsulation isn’t critical.         |
+Comparing WeakMap and Symbol:
+--------------------------------------------------
+| Feature             | WeakMap                                | Symbol                                |
+|---------------------|----------------------------------------|---------------------------------------|
+| Garbage Collection  | Value is collected when key is unused  | Property remains until object GC'd    |
+| Accessibility       | Only accessible via the WeakMap        | Accessible via Object.getOwnPropertySymbols() |
+| Complexity          | Requires external structure            | Directly attached to object           |
+| Performance         | Slightly slower                        | Faster                                |
+| Use Case            | Strong encapsulation                   | Lightweight privacy                   |
 ==================================================
 */
 
 // ================================================================
-//                    Private Properties with WeakMap
+//             Private Data with WeakMap in a Class
 // ================================================================
-const _radius = new WeakMap(); // Stores private radius
-const _move = new WeakMap(); // Stores private move method
+const _radius = new WeakMap(); // private radius storage
+const _move = new WeakMap(); // private move method storage
 
 class Circle {
-  // ================================================================
-  //               Constructor: Private Property Initialization
-  // ================================================================
+  // --------------------------------------------------------------
+  //        Constructor: Initialize Private Data
+  // --------------------------------------------------------------
   constructor(radius) {
-    _radius.set(this, radius); // Set private radius
-    _move.set(this, () => console.log("move", this)); // Set private method with correct `this`
+    _radius.set(this, radius);
+    _move.set(this, () => console.log("move", this)); // if using traditional function() {} would lose `this` binding, should bind manually later
   }
 
-  // ================================================================
-  //                 Public Method: Access Private Data
-  // ================================================================
+  // --------------------------------------------------------------
+  //         Public Method: Draw Circle
+  // --------------------------------------------------------------
   draw() {
-    console.log(_radius.get(this)); // Access private radius
-    _move.get(this)(); // Call private move method
+    console.log(_radius.get(this)); // print radius
+    _move.get(this)(); // invoke instance method
   }
 }
 
 // ================================================================
-//                       Instance Creation
+//              Create and Use a Circle Instance
 // ================================================================
 const c = new Circle(3);
-c.draw(); // Output: 3, "move Circle {...}"
+c.draw(); // Outputs: 3, "move Circle { ... }"
