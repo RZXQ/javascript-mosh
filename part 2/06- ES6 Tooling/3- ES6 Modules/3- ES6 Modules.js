@@ -7,6 +7,7 @@
 //   - In Node.js, use `"type": "module"` in `package.json` OR rename files to `.mjs`.
 //   - In browsers, use `<script type="module">` in HTML.
 
+// Returns an ES Module object (import * as module gets the object)
 import { Circle } from "./circle.js"; // Named import
 
 // ===========================================================
