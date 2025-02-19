@@ -1,9 +1,11 @@
 // ===========================================================
-//                      Modularity Benefits
+//                      Module Concept
 // ===========================================================
-// 1. Maintainability: Better organized code.
-// 2. Reuse: Reuse one or more modules.
-// 3. Abstraction: Hide implementation details using private properties.
+// - A module is a separate file in JavaScript.
+// - Benefits:
+//   1. Maintainability: Better organization of code.
+//   2. Reusability: Can be used in multiple parts of an application.
+//   3. Abstraction: Hides complexity, exposing only essential details.
 
 // ===========================================================
 //                      Circle Class
