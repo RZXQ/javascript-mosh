@@ -10,15 +10,22 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- Explanation:
-     1. The browser loads HTML content sequentially from top to bottom.
-        If the JavaScript script is placed at the top, it might interrupt the rendering process
-        of the rest of the HTML. For example, scripts that access or interact with other elements
-        would fail if those elements haven’t been rendered yet.
-     2. To ensure all HTML elements are correctly rendered before scripts are executed,
-        it is best practice to place JavaScript code at the bottom of the <body>. -->
+    <!--
+  Reasons to place JavaScript at the bottom of the body tag:
+
+  1. Performance:
+     Placing scripts in the head causes browsers to pause parsing HTML
+     while downloading and executing JavaScript code. This delay can
+     prevent the page from rendering quickly, potentially showing users
+     a blank or partially loaded page.
+
+  2. Dependency on DOM Elements:
+     JavaScript frequently interacts with webpage elements (like
+     manipulating or updating content). By positioning scripts at the
+     end of the body, we ensure that all HTML elements are completely
+     loaded and ready for manipulation.
+-->
     <script>
-      // This is my first JavaScript code!
       console.log("Hello World");
     </script>
   </body>
