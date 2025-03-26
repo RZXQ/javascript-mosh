@@ -1,7 +1,19 @@
 // ===========================================================
-//                  Falsy Values (6 in Total)
+//                  JavaScript Falsy Values
 // ===========================================================
-/* 0, NaN, '', false, undefined, null */
+// A value is falsy if it evaluates to false when converted to a boolean.
+// The following values are considered falsy in JavaScript:
+//
+// false          - Boolean false
+// 0              - Number zero
+// -0             - Negative number zero
+// NaN            - Not-a-Number value
+// 0n             - BigInt zero
+// ""             - Empty string
+// null           - Null value (intentional absence of value)
+// undefined      - Undefined value (uninitialized variable)
+//
+// All other values in JavaScript are truthy (evaluate to true).
 
 // ===========================================================
 //                  Logical OR (||) Operator
