@@ -1,14 +1,14 @@
 // ===========================================================
-//            Strict Equality (Type and Value Check)
+//            Strict Equality Operator (checks type and value, NO type conversion)
 // ===========================================================
 
-console.log(1 === 1); // true (both type and value are the same)
-console.log("1" === 1); // false (type is different: string vs number)
+console.log(1 === 1); // true (both type and value identical)
+console.log("1" === 1); // false (types differ: string vs number)
 
 // ===========================================================
-//      Loose Equality (Value Check with Type Conversion)
+//      Loose Equality Operator (checks value ONLY, includes type conversion)
 // ===========================================================
 
-console.log(1 == 1); // true (both values are the same)
-console.log("1" == 1); // true (string "1" is converted to number 1)
-console.log(true == 1); // true (true is converted to number 1)
+console.log(1 == 1); // true (values identical, same types)
+console.log("1" == 1); // true (string "1" converted to number 1)
+console.log(true == 1); // true (boolean true converted to number 1)
