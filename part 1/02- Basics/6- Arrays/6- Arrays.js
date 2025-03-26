@@ -21,5 +21,8 @@ selectedColors[2] = 1;
 // typeof returns "object", not "array"
 console.log(typeof selectedColors); // "object"
 
+// Use Array.isArray() to accurately confirm if a variable is an array
+console.log(Array.isArray(selectedColors)); // true
+
 // length automatically updated when items are added
 console.log(selectedColors.length); // 3
