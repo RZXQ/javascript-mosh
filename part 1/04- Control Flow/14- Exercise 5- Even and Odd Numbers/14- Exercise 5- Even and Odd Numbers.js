@@ -1,4 +1,6 @@
-showNumbers(10);
+// Description:
+// This function displays numbers from 0 to a given limit,
+// and indicates whether each number is EVEN or ODD.
 
 function showNumbers(limit) {
   for (let i = 0; i <= limit; i++) {
@@ -6,3 +8,5 @@ function showNumbers(limit) {
     console.log(i, message);
   }
 }
+
+showNumbers(10);
