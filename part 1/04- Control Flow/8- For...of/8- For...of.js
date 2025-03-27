@@ -23,5 +23,5 @@ for (const val of Object.values(mixed)) {
 const person = { id: 2025, name: "ruizhi" };
 
 for (const [key, val] of Object.entries(person)) {
-  console.log(`${key}: ${val}`); // "id: 2025", "name: ruizhi"
+  console.log(key, val); // [ 'id', 2025 ], [ 'name', 'ruizhi' ]
 }
