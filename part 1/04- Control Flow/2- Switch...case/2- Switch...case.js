@@ -20,5 +20,3 @@ switch (role) {
   // Note: The 'break' statement is optional here because 'default' is the last case
   // Since there's no code after this, the switch block will exit naturally
 }
-
-export {};
