@@ -1,3 +1,9 @@
+// IMPORTANT REMINDER:
+// Be cautious when using 'break' and 'continue' with a 'while' loop.
+// In a 'while' loop, you must manually manage increments or updates carefully,
+// especially when using 'continue', to avoid accidental infinite loops.
+// Consider a 'for' loop for clearer iteration control whenever possible.
+
 // ===========================================================
 //                      Loop Control: break
 // ===========================================================
