@@ -1,5 +1,15 @@
-const marks = [80, 80, 50];
-console.log(calculateGrade(marks));
+// Task Description:
+// Implement a JavaScript function named `calculateGrade` that accepts an array of numerical marks.
+// The function calculates the average mark and returns the corresponding letter grade according to these rules:
+// - 1-59: Grade "F"
+// - 60-69: Grade "D"
+// - 70-79: Grade "C"
+// - 80-89: Grade "B"
+// - 90-100: Grade "A"
+//
+// Example:
+// Given marks: [80, 80, 50]
+// Average: 70 --> Output: "C"
 
 function calculateGrade(marks) {
   const average = calculateAverage(marks);
@@ -17,3 +27,6 @@ function calculateAverage(array) {
   }
   return sum / array.length;
 }
+
+const marks = [80, 80, 50];
+console.log(calculateGrade(marks));
