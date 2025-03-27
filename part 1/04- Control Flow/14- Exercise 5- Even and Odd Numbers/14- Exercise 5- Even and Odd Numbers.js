@@ -3,10 +3,9 @@
 // and indicates whether each number is EVEN or ODD.
 
 function showNumbers(limit) {
-  for (let i = 0; i <= limit; i++) {
-    const message = i % 2 === 0 ? "EVEN" : "ODD";
-    console.log(i, message);
+  for (let i = 0; i < limit; i++) {
+    console.log(i % 2 === 0 ? `${i} EVEN` : `${i} ODD`);
   }
 }
 
-showNumbers(10);
+showNumbers(100);
