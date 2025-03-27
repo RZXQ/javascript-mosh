@@ -1,3 +1,10 @@
+// Description:
+// Determine if input is divisible by 3, 5, both, or neither, and return the result.
+//    - "FizzBuzz" if divisible by both 3 and 5,
+//    - "Fizz" if divisible by only 3,
+//    - "Buzz" if divisible by only 5,
+//    - the input itself if divisible by neither.
+// If the input is not a number, return NaN.
 function fizzBuzz(input) {
   if (typeof input !== "number") {
     return NaN;
