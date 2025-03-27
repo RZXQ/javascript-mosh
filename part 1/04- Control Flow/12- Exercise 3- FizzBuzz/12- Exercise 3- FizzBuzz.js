@@ -5,19 +5,12 @@
 //    - "Buzz" if divisible by only 5,
 //    - the input itself if divisible by neither.
 // If the input is not a number, return NaN.
+
 function fizzBuzz(input) {
-  if (typeof input !== "number") {
-    return NaN;
-  }
-  if (input % 3 === 0 && input % 5 === 0) {
-    return "FizzBuzz";
-  }
-  if (input % 3 === 0) {
-    return "Fizz";
-  }
-  if (input % 5 === 0) {
-    return "Buzz";
-  }
+  if (typeof input !== "number") return NaN;
+  if (input % 3 === 0 && input % 5 === 0) return "FizzBuzz";
+  if (input % 3 === 0) return "Fizz";
+  if (input % 5 === 0) return "Buzz";
   return input;
 }
 
