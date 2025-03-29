@@ -1,12 +1,18 @@
-// Constructor: Post(title, body, author) with defaults for views, comments, isLive
-function Post(title, body, author) {
+// Task:
+// Define a constructor function for creating blog post objects.
+// Each post should have title, body, author, and views as required properties.
+// Optionally include comments and a publication status (isLive).
+// Create an example post object and output it to the console.
+
+function Post(title, body, author, views, comments, isLive) {
   this.title = title;
   this.body = body;
   this.author = author;
-  this.views = 0;
-  this.comments = [];
-  this.isLive = false;
+  this.views = views;
+
+  this.comments = comments || "comments";
+  this.isLive = isLive || "isLive";
 }
 
-let post = new Post("a", "b", "c");
+const post = new Post("a", "b", "c", "d");
 console.log(post);
