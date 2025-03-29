@@ -48,4 +48,4 @@ console.log(message.trimEnd());
 //                 Splitting and Parsing
 // ===========================================================
 
-console.log(message.split(" "));
+console.log(message.split(" ").join("-"));
