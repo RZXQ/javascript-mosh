@@ -1,4 +1,18 @@
-// ==================== Object Definition ====================
+// ===========================================================
+//            Object Keys: Strings and Symbols
+// ===========================================================
+// According to JavaScript language specifications, keys in JavaScript object literals are always either strings or
+// symbols. If a symbol is used explicitly as a key, it retains its type as a symbol. Otherwise, all other keys, including
+// numeric ones, are implicitly converted to strings internally.
+//
+// Example object with implicitly stringified keys:
+// const circle = {
+//   "radius": 1,
+//   "draw": function() {
+//     console.log("draw");
+//   },
+// };
+
 const circle = {
   radius: 1,
   draw() {
