@@ -1,24 +1,18 @@
 // ===========================================================
-//                          numbers.pop()
+//                      Array.push()
 // ===========================================================
 
-const numbers = [1, 2, 3, 4];
-const last = numbers.pop();
-console.log(last); // 4
-console.log(numbers); // [1, 2, 3]
+const numbers = [3, 4];
+const lengthAfterPush = numbers.push(5, 6); // returns 4
 
 // ===========================================================
-//                          numbers.shift()
+//                      Array.unshift()
 // ===========================================================
 
-const first = numbers.shift();
-console.log(first); // 1
-console.log(numbers); // [2, 3]
+const lengthAfterUnshift = numbers.unshift(1, 2); // returns 6
 
 // ===========================================================
-//                        numbers.splice()
+//                      Array.splice()
 // ===========================================================
 
-const removed = numbers.splice(1, 1);
-console.log(removed); // [3]
-console.log(numbers); // [2]
+const removedItems = numbers.splice(2, 0, "a", "b"); // returns []
