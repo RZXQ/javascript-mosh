@@ -1,5 +1,6 @@
 // ===========================================================
 //           1. Transform Elements to Strings
+// Remember: split() works only for strings; here we use join()
 // ===========================================================
 
 const numbers = [1, -1, 2, 3];
