@@ -26,7 +26,7 @@ console.log(message.startsWith("This"));
 console.log(message.startsWith("this"));
 console.log(message.endsWith("e"));
 console.log(message.indexOf("my"));
-console.log(message.lastIndexOf("my"));
+console.log(message.lastIndexOf("my", 3)); // search backwards from index 3 towards the start of the string
 
 // ===========================================================
 //                String Modification Methods
