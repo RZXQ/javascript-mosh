@@ -1,5 +1,6 @@
 // ===========================================================
 //              Default Parameters in ES6+
+// Default parameter behavior is essentially identical in JavaScript and TypeScript.
 // ===========================================================
 function interest(principal, rate = 3.5, years = 5) {
   return ((principal * rate) / 100) * years;
