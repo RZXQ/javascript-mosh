@@ -1,9 +1,18 @@
 // ===========================================================
-//                           Scope in JavaScript
+//                     🌐 Scope in JavaScript 🌐
+// ===========================================================
+//
+// | Declaration     | Global variable?           | Attached to window? |
+// |-----------------|----------------------------|---------------------|
+// | `var color`     | ✅ (Yes)                   | ✅ (Yes)            |
+// | `const color`   | ✅ (Yes, script-scoped)    | ❌ (No)             |
+// | `let color`     | ✅ (Yes, script-scoped)    | ❌ (No)             |
+//
 // ===========================================================
 
-// ========================== Global Scope ==========================
-// - Avoid global variables to prevent unintended overwrites.
+// ======================== Global Scope ========================
+// 🔸 NOTE: Avoid global variables to prevent unintended overwrites.
+
 const color = "red";
 
 // ========================== Local Scope ==========================
