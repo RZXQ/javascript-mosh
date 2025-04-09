@@ -24,6 +24,7 @@ const x = 10;
 // `var` attaches to `window`; `let` and `const` do not.
 var color = "red";
 let age = 30;
+const hobby = "reading";
 
 console.log(window.color); // "red"
 console.log(this.color); // "red" (same as `window.color`)
