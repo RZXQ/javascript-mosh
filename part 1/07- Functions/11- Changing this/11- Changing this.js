@@ -18,16 +18,16 @@ video1.showTags();
 // ===========================================================
 //     Solution 2: Storing `this` in a Variable (Closure)
 // ===========================================================
-// - Store `this` in a variable (e.g., `self`) to retain access via closure.
-// - The callback retains the outer scope's `self` even when invoked later.
+// - Store `this` in a variable (e.g., `that`) to retain access via closure.
+// - The callback retains the outer scope's `that` even when invoked later.
 // ===========================================================
 const video2 = {
   title: "title",
   tags: ["a", "b", "c"],
   showTags() {
-    const self = this; // `self` preserves `this`
+    const that = this; // `that` preserves `this`
     this.tags.forEach(function (tag) {
-      console.log(self.title, tag); // Uses `self` from closure
+      console.log(that.title, tag); // Uses `that` from closure
     });
   },
 };
@@ -74,7 +74,7 @@ video3.showTags();
 // ===========================================================
 //     Solution 5: Using Arrow Functions
 // ===========================================================
-// - Arrow functions inherit `this` from their surrounding lexical scope.
+// - Arrow functions inherit `this` from their surrounding lexical scope.( inherit this from the containing function)
 // - They do NOT have their own `this`, avoiding context loss in callbacks.
 // - In this case, `this` refers to `video4` (the enclosing `showTags` method).
 // ===========================================================
