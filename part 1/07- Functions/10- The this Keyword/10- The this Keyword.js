@@ -1,68 +1,84 @@
 // ===========================================================
-// This: the object that is executing the current function
-// 1. method -> this references the object itself
-// 2. regular function -> global (window, global)
-// ===========================================================
-
-// ===========================================================
-//                 1. `this` in an Object Method
+//   1. `this` in Methods : this is referencing the object that is executing the current function
 // ===========================================================
 const video1 = {
   title: "a",
   play() {
-    console.log(this); // Refers to `video1` (object calling the method)
+    console.log(this); // Refers to `video1`, the object that is calling the method
   },
 };
 
 video1.stop = function () {
-  console.log(this); // Refers to `video1`
+  console.log(this); // Refers to `video1`, as it is dynamically assigned as a method
 };
 
-video1.play();
-video1.stop();
+video1.play(); // Logs `video1`
+video1.stop(); // Logs `video1`
+
+// -------- Exception: Using Arrow Functions in Methods --------
+const video2 = {
+  title: "a",
+  play: () => console.log(this), // Arrow functions DO NOT have their own `this`
+};
+
+video2.play();
+// Logs the outer lexical `this`:
+// - In non-strict mode: global object (`window` in browsers, `global` in Node.js)
+// - In strict mode: undefined
 
 // ===========================================================
-//              2. `this` in a Regular Function
+//            2. `this` in Regular Functions
 // ===========================================================
+
+// 2.1 `this` in Regular Functions (Global Scope)
 function playVideo() {
-  console.log(this); // Refers to `window` (browser) or `global` (Node.js)
+  console.log(this);
+  // In non-strict mode: refers to the global object (`window` or `global`)
+  // In strict mode: `this` is undefined
 }
 
-playVideo();
+playVideo(); // Logs `window` or `undefined` (in strict mode)
 
-// ===========================================================
-//          3. `this` in a Constructor Function
-// ===========================================================
+// 2.2 `this` in Constructor Functions
 function Video(title) {
-  this.title = title; // `this` refers to the new object instance
+  this.title = title; // `this` refers to the new object instance being created
   console.log(this);
 }
 
-const video2 = new Video("b"); // `this` points to the newly created object
+const video2 = new Video("b");
+// Logs the newly created object, `video2`
 
 // ===========================================================
-//     4. `this` in Callbacks Inside a Method (Common Issue)
+//          3. `this` in Callbacks Inside a Method
+// Common Issue: Callback function changes the `this` context
 // ===========================================================
 const video3 = {
   title: "title",
   tags: ["a", "b", "c"],
   showTags() {
     this.tags.forEach(function (tag) {
-      console.log(this, tag); // `this` is `undefined` in strict mode, `window` otherwise
+      console.log(this.title, tag);
+      // Callback function:
+      // - In non-strict mode: `this` refers to the global object (`window`/`global`)
+      // - In strict mode: `this` is `undefined`
     });
   },
 };
 
-// Solution: Pass `this` as a second argument to forEach
+video3.showTags();
+// Logs `undefined` or `window` (depending on strict mode), and each `tag`
+
+// -------- Solution: Pass `this` to the Callback --------
 const video4 = {
   title: "title",
   tags: ["a", "b", "c"],
   showTags() {
     this.tags.forEach(function (tag) {
-      console.log(this, tag); // `this` now refers to `video4`
+      console.log(this.title, tag); // `this` now correctly refers to `video4`
     }, this);
+    // Explicitly passing `this` as the second argument to `forEach`
   },
 };
 
-video3.showTags();
 video4.showTags();
+// Logs `video4` and each `tag`
