@@ -1,6 +1,15 @@
 // ===========================================================
-//                      Array Prototype
-// Note: Objects created by a given constructor will have the same prototype
+//                     Constructor Prototypes
+// ===========================================================
+// Important: All instances created by a specific constructor function
+// share a single prototype object.
+//
+// For example, every object created by the Circle constructor
+// will point to the *same* Circle.prototype.
+//
+// This prototype object exists only once in memory, regardless of
+// how many Circle instances are created. Shared methods or properties
+// should be placed on the prototype to ensure there's no duplication.
 // ===========================================================
 
 let myArray = [];
