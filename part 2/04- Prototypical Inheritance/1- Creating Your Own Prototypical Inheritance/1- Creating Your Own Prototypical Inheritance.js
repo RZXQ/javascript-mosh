@@ -10,24 +10,12 @@ Shape.prototype.sharedFunction = function () {
 
 // ===========================================================
 //                  Child Class: Circle
+//- The **original** `Circle.prototype` (with its `.constructor = Circle`) is **gone**!
+// - The new object **does NOT** have a `constructor` property of its own; it _inherits_ one from . `Shape.prototype`
 // ===========================================================
-// Note: Chrome DevTools' right-side panel displays the [[Prototype]] property,
-//       which points to the direct prototype of the current object.
 
 function Circle(radius) {
   this.radius = radius;
 }
 
 Circle.prototype = Object.create(Shape.prototype);
-Circle.prototype.draw = function () {
-  console.log("draw");
-};
-
-// ===========================================================
-//                      Usage Example
-// ===========================================================
-
-const s = new Shape();
-const c = new Circle(1);
-console.log(s);
-console.log(c);
