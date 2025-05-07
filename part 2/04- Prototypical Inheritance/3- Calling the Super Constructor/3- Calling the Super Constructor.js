@@ -4,8 +4,6 @@
 function Shape(color) {
   this.color = color;
 }
-Shape.prototype.duplicate = () => console.log("duplicate");
-Shape.prototype.sharedProperty = "shared";
 
 // ===========================================================
 //                  Child Class: Circle
@@ -22,10 +20,3 @@ function Circle(radius, color) {
 
 Circle.prototype = Object.create(Shape.prototype);
 Circle.prototype.constructor = Circle;
-
-// ===========================================================
-//                      Usage Example
-// ===========================================================
-const circleInstance = new Circle(1, "red");
-console.log(circleInstance);
-console.log(circleInstance.sharedProperty);
