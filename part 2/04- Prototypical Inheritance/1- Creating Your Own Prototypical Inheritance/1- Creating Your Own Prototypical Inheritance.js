@@ -2,7 +2,9 @@
 //                      Parent Class: Shape
 // ===========================================================
 
-function Shape() {}
+function Shape() {
+  console.log("Shape Constructor");
+}
 
 Shape.prototype.sharedFunction = function () {
   console.log("sharedFunction");
@@ -10,8 +12,16 @@ Shape.prototype.sharedFunction = function () {
 
 // ===========================================================
 //                  Child Class: Circle
-//- The **original** `Circle.prototype` (with its `.constructor = Circle`) is **gone**!
-// - The new object **does NOT** have a `constructor` property of its own; it _inherits_ one from . `Shape.prototype`
+//
+// - When we assign Circle.prototype = Object.create(Shape.prototype),
+//   we replace the original Circle.prototype with a new, empty object.
+// - This new object’s prototype (__proto__) points to Shape.prototype.
+// - The new Circle.prototype does NOT have its own 'constructor' property.
+// - As a result, Circle.prototype.constructor is inherited from Shape.prototype,
+//   which points to Shape.
+//
+// - If we want Circle.prototype.constructor to reference Circle again,
+//   we need to manually reset it: Circle.prototype.constructor = Circle;
 // ===========================================================
 
 function Circle(radius) {
@@ -19,3 +29,7 @@ function Circle(radius) {
 }
 
 Circle.prototype = Object.create(Shape.prototype);
+Circle.prototype.draw = function () {};
+
+const c = new Circle(10);
+console.log(c);
