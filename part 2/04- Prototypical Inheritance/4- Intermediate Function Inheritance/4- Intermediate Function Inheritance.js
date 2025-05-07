@@ -1,46 +1,27 @@
-// ===========================================================
-//                      Parent Class: Shape
-// ===========================================================
 function Shape(color) {
   this.color = color;
 }
 
-Shape.prototype.duplicate = function () {
-  console.log("duplicate");
-};
-
-// ===========================================================
-//                  Child Class: Circle
-// ===========================================================
 function Circle(radius, color) {
-  Shape.call(this, color); // Call base class constructor
+  Shape.call(color);
   this.radius = radius;
 }
 
-// ===========================================================
-//                  Child Class: Square
-// ===========================================================
-function Square(size) {
+function Square(size, color) {
+  Shape.call(color);
   this.size = size;
 }
 
-// ===========================================================
-//                    Utility Function: extend
-// Note: called extend Child with Parent
-// ===========================================================
 function extend(Child, Parent) {
-  Child.prototype = Object.create(Parent.prototype); // Set up inheritance
-  Child.prototype.constructor = Child; // Restore constructor reference
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
 }
 
-// ===========================================================
-//                      Extend Classes
-// ===========================================================
 extend(Circle, Shape);
 extend(Square, Shape);
 
-// ===========================================================
-//                      Usage Example
-// ===========================================================
-const circle = new Circle(2, "red");
-console.log(circle);
+const c = new Circle(10, "red");
+const s = new Square(10, "blue");
+
+console.log(c);
+console.log(s);
