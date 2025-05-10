@@ -1,31 +1,32 @@
 // ===========================================================
-//            Constructor Function (Pre-ES6)
+//                  1. Constructor Function (Pre-ES6)
 // ===========================================================
 function Circle(radius) {
   this.radius = radius;
-  this.draw = function () {
-    console.log("draw");
-  };
 }
 
+Circle.prototype.draw = function () {
+  console.log("draw");
+};
+
 // ===========================================================
-//              ES6 Class (Syntactic Sugar)
+//                  2. ES6 Class Syntax
 // ===========================================================
 class Circle {
   constructor(radius) {
     this.radius = radius;
 
-    // A. Method defined here is created PER INSTANCE (not in prototype)
+    // Instance method: Creates a new copy for each object
     this.move = function () {
       console.log("move");
     };
   }
 
-  // B. Method defined here is in PROTOTYPE (shared between instances)
+  // Prototype method: Shared across all instances
   draw() {
     console.log("draw");
   }
 }
 
 const circle = new Circle(1);
-console.log(typeof Circle); // Output: "function"
+console.log(typeof Circle); // Output: "function" (classes are constructor functions in JS)
