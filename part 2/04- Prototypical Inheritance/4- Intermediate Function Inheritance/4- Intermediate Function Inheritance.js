@@ -3,12 +3,12 @@ function Shape(color) {
 }
 
 function Circle(radius, color) {
-  Shape.call(color);
+  Shape.call(this, color);
   this.radius = radius;
 }
 
 function Square(size, color) {
-  Shape.call(color);
+  Shape.call(this, color);
   this.size = size;
 }
 
