@@ -3,6 +3,10 @@
 // ===========================================================
 function Circle(radius) {
   this.radius = radius;
+
+  this.move = function () {
+    console.log("move");
+  };
 }
 
 Circle.prototype.draw = function () {
