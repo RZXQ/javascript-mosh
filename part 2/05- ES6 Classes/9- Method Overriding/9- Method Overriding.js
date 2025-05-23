@@ -12,6 +12,7 @@ class Shape {
 // ================================================================
 class Circle extends Shape {
   move() {
+    // we cannot write override move() in javascript, it is a modifier in typescript
     super.move(); // Call the parent class's move method
     console.log("circle move"); // Subclass-specific behavior
   }
