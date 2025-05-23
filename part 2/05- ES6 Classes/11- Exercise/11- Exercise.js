@@ -5,6 +5,10 @@ class Stack {
     this.#arr = [];
   }
 
+  get count() {
+    return this.#arr.length;
+  }
+
   peek() {
     if (this.#arr.length <= 0) throw new Error("Stack is empty");
 
