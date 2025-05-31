@@ -1,36 +1,20 @@
-// ===========================================================
-//                  1. Importing Circle Class
-// ===========================================================
-// - ES Modules require the .js extension when importing local files.
-// - This is a named import, meaning Circle was exported with export class Circle {}.
-// - The file must be executed as an ES Module:
-// - In Node.js, use "type": "module" in package.json OR rename files to .mjs.
-// - In browsers, use <script type="module"> in HTML.
+// ========== NAMED IMPORT ==========
+// Must use EXACT name with curly braces
+import { Circle } from "./circle.js";
 
-import { Circle } from "./circle.js"; // Named import
+const c1 = new Circle(10);
+c1.draw(); // Output: 10
 
-// ===========================================================
-//                  2. Importing an Entire Module as an Object
-// ===========================================================
-// - import * as module returns an ES Module object.
-// - This object contains all named exports as properties.
-// - Example: import * as module from "./circle.js";
-// - const { Circle } = module;
+// ========== DEFAULT IMPORT ==========
+// Use ANY name, no curly braces
+// (Only works if circle.js uses: export default class Circle)
+/*
+import CustomCircle from "./circle.js";
 
-// ===========================================================
-//                  3. Object Destructuring
-// ===========================================================
-// - Given const { name: name } = { name: "ruizhi" };
-// 1. Right-side object: { name: "ruizhi" } is an object with a name property that holds "ruizhi".
-// 2. Destructuring pattern on the left: { name: name }
-// - The left name: refers to the name property of the right-side object.
-// - The second name is a new variable that will store the extracted value.
-// 3. Assignment process: The name property from the object { name: "ruizhi" } is assigned to the new variable name.
-// 4. Final result: The variable name holds the value "ruizhi".
+const c3 = new CustomCircle(30);
+c3.draw(); // Output: 30
+*/
 
-// ===========================================================
-// 4. Example Usage
-// ===========================================================
-
-const c = new Circle(10);
-c.draw();
+// KEY DIFFERENCES:
+// Named:   import { Circle } from "./circle.js"    // Exact name required
+// Default: import AnyName from "./circle.js"       // Any name allowed
